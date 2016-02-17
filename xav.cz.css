@@ -1,0 +1,59 @@
+html, body {
+    height:100%;
+    overflow:hidden;
+}
+
+body {
+    font-family:monospace;
+    background-color:#1a2532;
+    color:#e6e7cf;
+    font-size:13px;
+}
+div.main {
+    position:relative;
+    width:530px;
+    margin:0 auto;
+    top:70px;
+}
+a, a:link, a:visited, a:hover, a:active {
+    color:#7690fd;
+    text-decoration:none;
+    border-bottom: 1px solid white;
+}
+a:hover {
+    text-decoration:underline;
+}
+.green {
+    color:#649a64;
+}
+.purple {
+    color:#c34b94;
+}
+.purple_light {
+    color:#a9668f;
+}
+.divider {
+    color:#b9438b;
+    display:block;
+    margin:10px 0px 10px 0px;
+}
+.header {
+    display:block;
+    margin:10px 0px 10px 0px;
+}
+.frost {
+    color:#b0cfe1;
+}
+.bright {
+    color:#f4f5e2;
+}
+.pounds {
+    letter-spacing:-1px;
+}
+
+.tw, .tw a {background:#7DB1D3; color:#fff;}
+.fb, .fb a {background:#6D89FE; color:#fff;}
+.in, .in a {background:#2178B0; color:#fff;}
+.tb, .tb a {background:#2F4860; color:#fff;}
+.me, .me a {background:#000; color:#fff;}
+.gh, .gh a {background:#E2E3C9; color:#000;}
