@@ -18,7 +18,6 @@ div.main {
 a, a:link, a:visited, a:hover, a:active {
     color:#7690fd;
     text-decoration:none;
-    border-bottom: 1px solid white;
 }
 a:hover {
     text-decoration:underline;
@@ -51,9 +50,9 @@ a:hover {
     letter-spacing:-1px;
 }
 
-.tw, .tw a {background:#7DB1D3; color:#fff;}
-.fb, .fb a {background:#6D89FE; color:#fff;}
-.in, .in a {background:#2178B0; color:#fff;}
-.tb, .tb a {background:#2F4860; color:#fff;}
-.me, .me a {background:#000; color:#fff;}
-.gh, .gh a {background:#E2E3C9; color:#000;}
+.tw, .tw a {color:#7DB1D3;}
+.fb, .fb a {color:#6D89FE;}
+.in, .in a {color:#2178B0;}
+.vm, .vm a {color:#2F4860;}
+.me, .me a {color:#000;}
+.gh, .gh a {color:#E2E3C9;}

@@ -13,6 +13,7 @@ Block = React.createClass({
 				<div>
 					{this.props.description}
 				</div>
+				<Divider />
 			</div>
 		)
 	}

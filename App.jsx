@@ -7,23 +7,13 @@ App = React.createClass({
 		]
 	},
 
-	renderHeaders () {
-		return (
-			this.getHeaders().map(header => <Header key={header._id} text={header.text} />)
-		);
-	},
-
-	renderDivider () {
-		return <span className="divider">---</span>
-	},
-
 	getBlocks () {
 		return [
 			{
 				_id: 1,
 				company: 'Freelance',
 				job: 'Dev MeteorJS',
-				slogan: 'Remarkable Products for Targeted Customers',
+				slogan: 'Value Proposition Building',
 				description: 'Yo, i job!'
 			},
 			{
@@ -43,6 +33,42 @@ App = React.createClass({
 		];
 	},
 
+	getLinks () {
+		return [
+			{
+				_id: 1,
+				service: 'twitter',
+				account: 'xavizalote'
+			},
+			{
+				_id: 2,
+				service: 'github',
+				account: 'xavizalote'
+			},
+			{
+				_id: 3,
+				service: 'linkedin',
+				account: 'in/xaviercazalot'
+			},
+			{
+				_id: 4,
+				service: 'facebook',
+				account: 'xavizalote'
+			},
+			{
+				_id: 5,
+				service: 'vimeo',
+				account: 'sakados'
+			}
+		];
+	},
+
+	renderHeaders () {
+		return (
+			this.getHeaders().map(header => <Header key={header._id} text={header.text} />)
+		);
+	},
+
 	renderBlocks () {
 		return this.getBlocks().map((block) => {
 
@@ -56,21 +82,6 @@ App = React.createClass({
 		});
 	},
 
-	getLinks () {
-		return [
-			{
-				_id: 1,
-				service: 'twitter',
-				account: 'xavizalote'
-			},
-			{
-				_id: 2,
-				service: 'github',
-				account: 'xavizalote'
-			}
-		];
-	},
-
 	renderLinks () {
 		return this.getLinks().map(link => <Link key={link._id} service={link.service} account={link.account} />);
 	},
@@ -81,11 +92,9 @@ App = React.createClass({
 
 				{this.renderHeaders()}
 
-				{this.renderDivider()}
+				<Divider />
 
 				{this.renderBlocks()}
-
-				{this.renderDivider()}
 
 				{this.renderLinks()}
 			</div>
