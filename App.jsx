@@ -1,3 +1,4 @@
+
 App = React.createClass({
 	getHeaders () {
 		return [
@@ -14,21 +15,21 @@ App = React.createClass({
 				company: 'Freelance',
 				job: 'Dev MeteorJS',
 				slogan: 'Value Proposition Building',
-				description: 'Yo, i job!'
+				description: "I'm an entrepreneur and a freelance developer working with MeteorJS, a client-server-database framework which allows to concentrate on developing business value. I help entrepreneurs making remarkable products for targeted customers."
 			},
 			{
 				_id: 2,
 				company: 'Startup42',
 				job: 'Program Manager',
 				slogan: 'From Hackers To Founders',
-				description: 'Y bla bla bla'
+				description: "Startup42 is a non-profit accelerator designed by EPITA to offer hacker teams with a good idea the skills and opportunities they need to become startup founders. I've been running the daily operational jobs of the program during the 6th session with Maxime Pico."
 			},
 			{
 				_id: 3,
 				company: 'Me',
 				job: 'Good fellow',
 				slogan: 'Hack, Learn, Make',
-				description: 'Hello world!'
+				description: "Currently living in Paris, France. Originally from the south of France. Slack evangelist. I'm a crazy backpacker, often called beatnik. I love everything related to the Web, Hacking, Slack and Traveling. Contact me if I can help you!"
 			},
 		];
 	},
@@ -38,12 +39,12 @@ App = React.createClass({
 			{
 				_id: 1,
 				service: 'twitter',
-				account: 'xavizalote'
+				account: 'xav_cz'
 			},
 			{
 				_id: 2,
 				service: 'github',
-				account: 'xavizalote'
+				account: 'xavcz'
 			},
 			{
 				_id: 3,
