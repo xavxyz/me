@@ -99,7 +99,7 @@ App = React.createClass({
 
 				{this.renderLinks()}
 
-				<div style={{'text-align': 'center', 'margin-top': '10px'}}>
+				<div style={{'textAlign': 'center', 'marginTop': '10px'}}>
 					Made with <i className="purple_light fa fa-heart" /> with Meteor and React, check the <a href="https://github.com/xavcz/cazalot-bros" target="_blank">repo</a>.
 				</div>
 

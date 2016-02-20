@@ -6,7 +6,7 @@ Header = React.createClass({
 	render () {
 		return (
 			<div className="hashline">
-				<span className="green pounds">##</span> {this.props.text}
+				<span className="green pounds">##</span> <Colorize>{this.props.text}</Colorize>
 			</div>
 		)
 	}
