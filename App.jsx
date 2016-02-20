@@ -2,9 +2,9 @@
 App = React.createClass({
 	getHeaders () {
 		return [
-			{ _id: 1, text: 'Xavier Cazalot 0.1' },
-			{ _id: 2, text: 'Entrepreneur. Hacker. Frenchie.' },
-			{ _id: 3, text: 'Stalk me on Twitter' }
+			{ _id: 1, text: 'Xavier Cazalot <span class="purple_light">0</span><span class="purple">.</span><span class="purple_light">2</span>' },
+			{ _id: 2, text: 'Hacker. Entrepreneur. Backpacker. ' },
+			{ _id: 3, text: 'Stalk me on <a href="https://twitter.com/xav_cz" target="_blank">Twitter</a>' }
 		]
 	},
 
@@ -15,21 +15,21 @@ App = React.createClass({
 				company: 'Freelance',
 				job: 'Dev MeteorJS',
 				slogan: 'Value Proposition Building',
-				description: "I'm an entrepreneur and a freelance developer working with MeteorJS, a client-server-database framework which allows to concentrate on developing business value. I help entrepreneurs making remarkable products for targeted customers."
+				description: "I am an entrepreneur and a freelance developer working with [MeteorJS](https://www.meteor.com), a client-server-database framework which allows to concentrate on developing business value. I help entrepreneurs making [remarkable products](https://en.wikipedia.org/wiki/Purple_Cow:_Transform_Your_Business_by_Being_Remarkable) for targeted customers. "
 			},
 			{
 				_id: 2,
 				company: 'Startup42',
 				job: 'Program Manager',
 				slogan: 'From Hackers To Founders',
-				description: "Startup42 is a non-profit accelerator designed by EPITA to offer hacker teams with a good idea the skills and opportunities they need to become startup founders. I've been running the daily operational jobs of the program during the 6th session with Maxime Pico."
+				description: "[Startup42](http://www.startup42.org) is a non-profit accelerator designed by [EPITA](http://www.epita.fr/international/) to offer hacker teams with a good idea the skills and opportunities they need to become startup founders. I have been running the daily operational jobs of the program during the 6th session with [Maxime Pico](https://linkedin.com/in/maximepico). "
 			},
 			{
 				_id: 3,
 				company: 'Me',
 				job: 'Good fellow',
 				slogan: 'Hack, Learn, Make',
-				description: "Currently living in Paris, France. Originally from the south of France. Slack evangelist. I'm a crazy backpacker, often called beatnik. I love everything related to the Web, Hacking, Slack and Traveling. Contact me if I can help you!"
+				description: "Currently living in Paris, France. Originally from the south of France. I'm a crazy backpacker, somehow a [beatnik](https://en.wikipedia.org/wiki/Jack_Kerouac). I love everything related to the Hacking, Slack, Skating and Traveling. Contact me if I can help you!"
 			},
 		];
 	},
@@ -99,7 +99,7 @@ App = React.createClass({
 
 				{this.renderLinks()}
 
-				<div style={{'textAlign': 'center', 'marginTop': '10px'}}>
+				<div style={{'textAlign': 'center', 'marginTop': '15px'}}>
 					Made with <i className="purple_light fa fa-heart" /> with Meteor and React, check the <a href="https://github.com/xavcz/cazalot-bros" target="_blank">repo</a>.
 				</div>
 

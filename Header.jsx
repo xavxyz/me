@@ -3,10 +3,14 @@ Header = React.createClass({
 		text: React.PropTypes.string.isRequired
 	},
 
+	styledLine () {
+		return '## '+ this.props.text;
+	},
+
 	render () {
 		return (
 			<div className="hashline">
-				<span className="green pounds">##</span> <Colorize>{this.props.text}</Colorize>
+				<Colorize>{this.styledLine()}</Colorize>
 			</div>
 		)
 	}
