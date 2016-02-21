@@ -88,6 +88,9 @@ App = React.createClass({
 	},
 
 	render () {
+
+		analytics.page('render personal page');
+
 		return (
 			<div className="main">
 
