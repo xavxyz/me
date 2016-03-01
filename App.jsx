@@ -1,8 +1,13 @@
-
 App = React.createClass({
+	getPicture () {
+		return {
+			size: '100px',
+			picture: 'https://pbs.twimg.com/profile_images/704641906370879488/9crxlIge_400x400.jpg'
+		};
+	},
 	getHeaders () {
 		return [
-			{ _id: 1, text: 'Xavier Cazalot <span class="purple_light">0</span><span class="purple">.</span><span class="purple_light">2</span>' },
+			{ _id: 1, text: 'Xavier Cazalot <span class="purple_light">0</span><span class="purple">.</span><span class="purple_light">3</span>' },
 			{ _id: 2, text: 'Hacker. Entrepreneur. Backpacker. ' },
 			{ _id: 3, text: 'Stalk me on <a href="https://twitter.com/xav_cz" target="_blank">Twitter</a>' }
 		]
@@ -64,6 +69,11 @@ App = React.createClass({
 		];
 	},
 
+	renderPicture () {
+		const props = this.getPicture();
+		return <Profilepic size={props.size} picture={props.picture} />
+	},
+
 	renderHeaders () {
 		return (
 			this.getHeaders().map(header => <Header key={header._id} text={header.text} />)
@@ -88,11 +98,12 @@ App = React.createClass({
 	},
 
 	render () {
-
 		analytics.page('render personal page');
 
 		return (
 			<div className="main">
+
+				{this.renderPicture()}
 
 				{this.renderHeaders()}
 

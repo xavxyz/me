@@ -1,6 +1,6 @@
 html, body {
     height:100%;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 body {
@@ -13,7 +13,7 @@ div.main {
     position:relative;
     width:530px;
     margin:0 auto;
-    top:70px;
+    top:30px;
 }
 a, a:link, a:visited, a:hover, a:active {
     color:#7690fd;
@@ -56,3 +56,11 @@ a:hover {
 .vm, .vm a {color:#2F4860;}
 .me, .me a {color:#000;}
 .gh, .gh a {color:#E2E3C9;}
+
+.profile-pic {
+    display: block;
+    border-radius: 50%;
+    border: 3px solid rgba(242, 241, 242, 0.6);
+    width: 100%;
+    height: 100%;
+}
