@@ -18,7 +18,7 @@ Colorize = React.createClass({
 	},
 
 	render() {
-		const textRendered = this.props.markdown ? marked(this.colorizer()) : this.colorizer()
+		const textRendered = this.props.markdown ? marked(this.colorizer()) : this.colorizer();
 
 		return (
 			<this.props.element

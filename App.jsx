@@ -34,7 +34,7 @@ App = React.createClass({
 				company: 'Me',
 				job: 'Good fellow',
 				slogan: 'Hack, Learn, Make',
-				description: "Currently living in Paris, France. Originally from the south of France. I'm a crazy backpacker, somehow a [beatnik](https://en.wikipedia.org/wiki/Jack_Kerouac). I love everything related to the Hacking, Slack, Skating and Traveling. Contact me if I can help you!"
+				description: "Established in Paris, France, if not traveling [around the world](https://vimeo.com/sakados). Originally from the south of France. I'm also partner in a [skateboard company](http://www.le-shape.com). I love everything related to Hacking, [Slack](https://slack.com), Skating and Traveling. Contact me if I can help you!"
 			},
 		];
 	},
@@ -114,7 +114,7 @@ App = React.createClass({
 				{this.renderLinks()}
 
 				<div style={{'textAlign': 'center', 'marginTop': '15px'}}>
-					Made with <i className="purple_light fa fa-heart" /> with Meteor and React, check the <a href="https://github.com/xavcz/cazalot-bros" target="_blank">repo</a>.
+					Made with <i className="purple_light fa fa-heart" /> with Meteor and React.<br />Create your own page, fork the <a href="https://github.com/xavcz/cazalot-bros" target="_blank">repo</a>!
 				</div>
 
 			</div>
