@@ -63,7 +63,6 @@ react-meteor-data@0.2.4
 react-runtime@0.14.3
 react-runtime-dev@0.14.3
 react-runtime-prod@0.14.3
-react-template-helper@0.2.4
 reactive-dict@1.1.4-beta.11
 reactive-var@1.0.6
 reload@1.1.5-beta.11
@@ -74,7 +73,6 @@ spacebars@1.0.8-beta.11
 spacebars-compiler@1.0.8-beta.11
 standard-minifier-css@1.0.3-beta.11
 standard-minifier-js@1.0.3-beta.11
-standard-minifiers@1.0.3-beta.11
 templating@1.1.6-beta.11
 templating-tools@1.0.1-beta.11
 tracker@1.0.10-beta.11

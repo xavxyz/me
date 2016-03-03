@@ -15,12 +15,10 @@ tracker                 # Meteor's client-side reactive programming library
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
+standard-minifier-css
+standard-minifier-js
 jsx
-react-meteor-data
-react-runtime@=0.14.3
-react-template-helper@=0.2.4
 fortawesome:fontawesome
 q42:react-markdown
 okgrow:analytics
-standard-minifier-css
-standard-minifier-js
+
