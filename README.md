@@ -1,7 +1,7 @@
-# Cazalot's brothers personal page in Meteor + React
+# Cazalot's brothers personal page in Meteor 1.3 + React
 Inspired by Clément Cazalot's static homepage http://cyg.fr
 
-This repo is a test with Meteor & React.
+This repo is a test with Meteor 1.3 & React.
 
 ### Example
 Here is an example : http://xav.cz/
