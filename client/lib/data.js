@@ -21,7 +21,7 @@ export default Data = {
 			company: 'Startup42',
 			job: 'Program Manager',
 			slogan: 'From Hackers To Founders',
-			description: "[Startup42](http://www.startup42.org) is a non-profit accelerator designed by [EPITA](http://www.epita.fr/international/) to offer hacker teams with a good idea the skills and opportunities they need to become startup founders. I have been running the daily operational jobs of the program during the 6th session with [Maxime Pico](https://linkedin.com/in/maximepico). "
+			description: "[Startup42](http://www.startup42.org) is a non-profit accelerator designed by [EPITA](http://www.epita.fr/international/) to offer hacker teams, having a good idea, the skills and opportunities they need to execute like real startup founders. I have been running the daily operational jobs of the program during the 6th session with [Maxime Pico](https://linkedin.com/in/maximepico). "
 		},
 		{
 			_id: 3,
