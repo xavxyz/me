@@ -5,6 +5,7 @@ import Profilepic from './Profilepic.jsx';
 import Header from './Header.jsx';
 import Block from './Block.jsx';
 import Link from './Link.jsx';
+import Footer from './Footer.jsx';
 
 export default class App extends React.Component {
 	renderPicture () {
@@ -51,9 +52,7 @@ export default class App extends React.Component {
 
 				{this.renderLinks()}
 
-				<div style={{'textAlign': 'center', 'marginTop': '15px'}}>
-					Made with <i className="purple_light fa fa-heart" /> with <a href="https://github.com/meteor">Meteor 1.3</a> and <a href="https://github.com/facebook/react">React</a>.<br />Create your own page, fork the <a href="https://github.com/xavcz/cazalot-bros" target="_blank">repo</a>!
-				</div>
+				<Footer />
 
 			</div>
 		)
