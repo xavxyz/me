@@ -62,4 +62,9 @@ a:hover {
     border: 3px solid rgba(242, 241, 242, 0.6);
     width: 100%;
     height: 100%;
+    transition: transform 0.8s ease-in 50ms
+}
+
+.profile-pic:hover {
+    transform: rotate(360deg) scale(1.4);
 }
