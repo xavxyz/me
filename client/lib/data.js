@@ -14,7 +14,7 @@ export default Data = {
 			company: 'Freelance',
 			job: 'Dev MeteorJS',
 			slogan: 'Value Proposition Building',
-			description: "I am an entrepreneur and a freelance developer working with [MeteorJS](https://www.meteor.com), a client-server-database framework which allows to concentrate on developing business value. I help entrepreneurs making [remarkable products](https://en.wikipedia.org/wiki/Purple_Cow:_Transform_Your_Business_by_Being_Remarkable) for targeted customers. "
+			description: "I am a [data-driven](http://leananalyticsbook.com/) entrepreneur and a freelance developer working with [MeteorJS](https://www.meteor.com), a client-server-database framework which allows to concentrate on developing business value. I help entrepreneurs making [remarkable products](https://en.wikipedia.org/wiki/Purple_Cow:_Transform_Your_Business_by_Being_Remarkable) for targeted customers. "
 		},
 		{
 			_id: 2,
