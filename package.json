@@ -1,0 +1,27 @@
+{
+  "name": "cazalot-bros",
+  "version": "1.0.0",
+  "description": "Cazalot's hackers personal page",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xavcz/cazalot-bros.git"
+  },
+  "author": "xavcz",
+  "bugs": {
+    "url": "https://github.com/xavcz/cazalot-bros/issues"
+  },
+  "homepage": "http://xav.cz",
+  "dependencies": {
+    "meteor-node-stubs": "^0.2.3",
+    "react": "^15.0.1",
+    "react-addons-create-fragment": "^15.0.1",
+    "react-addons-css-transition-group": "^15.0.1",
+    "react-addons-linked-state-mixin": "^15.0.1",
+    "react-addons-perf": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.0.1",
+    "react-addons-test-utils": "^15.0.1",
+    "react-addons-transition-group": "^15.0.1",
+    "react-addons-update": "^15.0.1",
+    "react-dom": "^15.0.1"
+  }
+}

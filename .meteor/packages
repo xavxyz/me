@@ -17,9 +17,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 standard-minifier-css
 standard-minifier-js
-jsx
 fortawesome:fontawesome
 q42:react-markdown
 okgrow:analytics
-
-tap:i18n
