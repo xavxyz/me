@@ -1,27 +1,20 @@
 {
-  "name": "cazalot-bros",
-  "version": "1.0.0",
-  "description": "Cazalot's hackers personal page",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xavcz/cazalot-bros.git"
+  "name": "xavcz",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.2.1"
   },
-  "author": "xavcz",
-  "bugs": {
-    "url": "https://github.com/xavcz/cazalot-bros/issues"
-  },
-  "homepage": "http://xav.cz",
   "dependencies": {
-    "meteor-node-stubs": "^0.2.3",
-    "react": "^15.0.1",
-    "react-addons-create-fragment": "^15.0.1",
-    "react-addons-css-transition-group": "^15.0.1",
-    "react-addons-linked-state-mixin": "^15.0.1",
-    "react-addons-perf": "^15.0.1",
-    "react-addons-pure-render-mixin": "^15.0.1",
-    "react-addons-test-utils": "^15.0.1",
-    "react-addons-transition-group": "^15.0.1",
-    "react-addons-update": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
   }
 }

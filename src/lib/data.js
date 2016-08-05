@@ -1,4 +1,4 @@
-export default Data = {
+const Data = {
 	picture: {
 		size: '100px',
 		img: 'https://pbs.twimg.com/profile_images/704641906370879488/9crxlIge_400x400.jpg'
@@ -60,3 +60,5 @@ export default Data = {
 		},
 	]
 };
+
+export default Data;

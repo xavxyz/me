@@ -1,6 +1,6 @@
 import React from 'react';
-import Colorize from './Colorize.jsx';
-import Divider from './Divider.jsx';
+import Colorize from './Colorize.js';
+import Divider from './Divider.js';
 
 export default class Block extends React.Component {
 	render () {

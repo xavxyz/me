@@ -1,5 +1,5 @@
 import React from 'react';
-import Colorize from './Colorize.jsx';
+import Colorize from './Colorize.js';
 
 export default class Header extends React.Component {
 	styledLine () {

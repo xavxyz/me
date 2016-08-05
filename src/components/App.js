@@ -1,11 +1,11 @@
 import React from 'react';
 import Data from '../lib/data';
-import Divider from './Divider.jsx';
-import Profilepic from './Profilepic.jsx';
-import Header from './Header.jsx';
-import Block from './Block.jsx';
-import Link from './Link.jsx';
-import Footer from './Footer.jsx';
+import Divider from './Divider.js';
+import Profilepic from './Profilepic.js';
+import Header from './Header.js';
+import Block from './Block.js';
+import Link from './Link.js';
+import Footer from './Footer.js';
 
 export default class App extends React.Component {
 	renderPicture () {
@@ -37,8 +37,6 @@ export default class App extends React.Component {
 	}
 
 	render () {
-		analytics.page('render personal page');
-
 		return (
 			<div className="main">
 

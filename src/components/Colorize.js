@@ -7,7 +7,7 @@ export default class Colorize extends React.Component {
 	}
 
 	render() {
-		const textRendered = this.props.markdown ? marked(this.colorizer()) : this.colorizer();
+		const textRendered = /*this.props.markdown ? marked(this.colorizer()) :*/ this.colorizer();
 
 		return (
 			<span

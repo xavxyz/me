@@ -1,12 +1,11 @@
-html, body {
-    height:100%;
-}
-
 body {
     font-family:monospace;
     background-color:#1a2532;
     color:#e6e7cf;
     font-size:13px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 div.main {
     position:relative;
