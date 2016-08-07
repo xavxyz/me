@@ -1,5 +1,5 @@
 import React from 'react';
-import rocket from './assets/rocket.jpg'
+import { header } from './assets/';
 import './Header.css';
 
 const Header = () => (
@@ -9,7 +9,7 @@ const Header = () => (
       <span className="Header-text__meta">I build modern webapps to help SaaS businesses becoming more profitable.</span>
     </div>
     <div className="Header-picture">
-      <img src={rocket} alt="Rocket consulting" />
+      <img src={ header.rocket } alt="Rocket consulting" />
     </div>
   </div>
 );
