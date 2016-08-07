@@ -2,4 +2,4 @@
 
 What this will look like:
 
-![](https://github.com/xavcz/cazalot-bros/blob/master/sketch-file.jpg)
+![](https://github.com/xavcz/cazalot-bros/blob/master/sketch-file.png)
