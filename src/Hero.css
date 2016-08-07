@@ -1,0 +1,26 @@
+.Hero {
+  background-color: rgb(24,23,67);
+  height: 70vh;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media all and (max-width:800px) {
+  .Hero {
+    padding-top: 10px;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .Hero-picture > img {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+.Hero-picture > img {
+  width: 400px;
+  height: 300px;
+}

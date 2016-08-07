@@ -1,12 +1,10 @@
-// header
 import rocket from './rocket.jpg';
 import me from './me.png';
-
 import testimonial0 from './testimonial-0.png';
 import testimonial1 from './testimonial-1.png';
 import testimonial2 from './testimonial-2.png';
 
-export const header = {
+export const hero = {
   rocket,
   me,
 };

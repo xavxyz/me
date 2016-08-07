@@ -1,22 +1,10 @@
-/* Flex Wrapper */
 .Header {
-  background-color: rgb(24,23,67);
-  height: 500px;
-  color: #eff5fe;
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Flex Item -> Flex Wrapper */
-.Header-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.Header-text__main {
+.Header-main {
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
@@ -24,12 +12,22 @@
   letter-spacing: 1.2px;
 }
 
-.Header-text__meta {
+.Header-meta {
   font-size: 1.5em;
 }
 
-/* Flex Item */
-.Header-picture > img {
-  width: 400px;
-  height: 300px;
+.Header--white {
+  color: #eff5fe;
+}
+
+.Header--white > .Header-meta {
+  color: rgb(222,232,253);
+}
+
+.Header--dark {
+  color: rgb(24,23,67);
+}
+
+.Header--dark > .Header-meta {
+  color: #4C4D72;
 }
