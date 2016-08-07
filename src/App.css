@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.App > * {
+  margin-bottom: 60px;
+}
+
+.App > *:not(:first-child) {
+  margin-top: 60px;
+}
