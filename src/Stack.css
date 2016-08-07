@@ -1,0 +1,8 @@
+.Stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.Stack__content {
+  margin-top: 40px;
+}
