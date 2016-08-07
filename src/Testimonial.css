@@ -12,31 +12,31 @@
   }
 }
 
-.Testimonial-picture {
+.Testimonial__picture {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 150px;
 }
 
-.Testimonial-picture > img {
+.Testimonial__picture > img {
   width: 120px;
   height: 120px;
   border: 10px solid #eee;
   border-radius: 99px;
 }
 
-.Testimonial-content {
+.Testimonial__content {
   font-size: 1.2em;
   flex: 1 1 60%;
   display: flex;
   flex-direction: column;
 }
 
-.Testimonial-content__text {
-  justify-content: space-between;
+.Testimonial__text {
+
 }
 
-.Testimonial-content__meta {
+.Testimonial__meta {
   margin-top: 15px;
 }

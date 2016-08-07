@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-.Header-main {
+.Header__main {
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
@@ -12,7 +12,7 @@
   letter-spacing: 1.2px;
 }
 
-.Header-meta {
+.Header__meta {
   font-size: 1.5em;
 }
 
@@ -20,7 +20,7 @@
   color: #eff5fe;
 }
 
-.Header--white > .Header-meta {
+.Header--white > .Header__meta {
   color: rgb(222,232,253);
 }
 
@@ -28,6 +28,6 @@
   color: rgb(24,23,67);
 }
 
-.Header--dark > .Header-meta {
+.Header--dark > .Header__meta {
   color: #4C4D72;
 }

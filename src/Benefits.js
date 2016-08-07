@@ -19,9 +19,9 @@ const whyShouldHireMe = [
 const Benefits = () => (
   <div className="Benefits">
     { whyShouldHireMe.map(({ title, details }, i) => (
-      <div className="Benefits-block" key={i}>
-        <span className="Benefits-block__title">{ title }</span>
-        <span className="Benefits-block__details">{ details }</span>
+      <div className="Benefits__block" key={i}>
+        <span className="Benefits__title">{ title }</span>
+        <span className="Benefits__details">{ details }</span>
       </div>
     )) }
   </div>

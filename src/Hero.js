@@ -10,7 +10,7 @@ const Hero = () => (
       meta="I build modern webapps to help SaaS businesses becoming more profitable."
       color="white" 
     />
-    <div className="Hero-picture">
+    <div className="Hero__picture">
       <img src={ hero.rocket } alt="Rocket consulting" />
     </div>
   </div>
