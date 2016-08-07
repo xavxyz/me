@@ -2,7 +2,6 @@
 .Header {
   background-color: rgb(24,23,67);
   height: 500px;
-  padding: 50px; /* mixin wrapper padding */
   color: #eff5fe;
   display: flex;
   flex: 1;

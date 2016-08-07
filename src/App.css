@@ -6,6 +6,8 @@
 
 .App > * {
   margin-bottom: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .App > *:not(:first-child) {
