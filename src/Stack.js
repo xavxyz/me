@@ -28,6 +28,7 @@ const Stack = () => (
       main="Your business deserves the right tools"
       meta="You may recognize your needs in this subset of my toolbox."
       color="dark"
+      animatedWordIndex={2}
     />
     {toolboxSubset.map((item, i) => <PictureListItem { ...item } key={i} />)}
   </div>

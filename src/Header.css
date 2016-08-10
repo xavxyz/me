@@ -11,6 +11,17 @@
   line-height: 1;
   letter-spacing: 1.2px;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  cursor:grab;
+}
+
+.Header__main span {
+  display: inline-block;
+  transition: transform 0.2s;
+  cursor:grabbing;
+}
+
+.Header__main span:hover {
+  transform: translateY(-20px) rotate(10deg) scale(2);
 }
 
 .Header__meta {
