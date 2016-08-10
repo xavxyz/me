@@ -19,5 +19,6 @@
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+  },
+  "homepage": "http://xavcz.github.io/cazalot-bros"
 }
