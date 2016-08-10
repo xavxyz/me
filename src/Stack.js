@@ -18,7 +18,7 @@ const toolboxSubset = [
   { 
     picture: toolbox[2], 
     name: 'Meteor',
-    text: 'Meteor eases the pain of building great web applications when used as a the the centerpiece of an architectural stack. It allows to concentrate on developing business value and validate assumptions quickly.'
+    text: 'Meteor eases the pain of building great web applications when used as the centerpiece of an architectural stack. It allows to concentrate on developing business value and validate assumptions quickly.'
   },
 ];
 

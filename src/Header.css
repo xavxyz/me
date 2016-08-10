@@ -6,7 +6,7 @@
 
 .Header__main {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 1.2px;
@@ -26,6 +26,7 @@
 
 .Header__meta {
   font-size: 1.5em;
+  font-weight: 300;
 }
 
 .Header--white {
