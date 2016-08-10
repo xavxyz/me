@@ -20,7 +20,7 @@ const App = () => (
       picture={ testimonials[0] }
       text="Xavier is an excellent web developer supported by an entrepreneur mindset. He remains always watchful on the legitimacy of a functional evolution compared to business benefits. This is extremely useful and effective during the design process."
       name="Satisfied Client"
-      meta="— Aurélien Bassile, CTO @ Cavacave"
+      meta="— Aurélien Basille, CTO @ Cavacave"
     />
 
     <Stack />    

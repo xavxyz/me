@@ -1,8 +1,3 @@
-.Benefits {
-  display: flex;
-  flex-direction: column;
-}
-
 .Benefits > *:not(:last-child) {
   margin-bottom: 40px;
 }

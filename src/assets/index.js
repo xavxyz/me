@@ -1,4 +1,4 @@
-import rocket from './rocket.jpg';
+import rocket from './rocket.png';
 import me from './me.png';
 import testimonial0 from './testimonial-0.png';
 import testimonial1 from './testimonial-1.png';

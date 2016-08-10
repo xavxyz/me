@@ -1,5 +1,5 @@
 .Hero {
-  background-color: rgb(24,23,67);
+  background: linear-gradient(110deg, #2376ae 0%, rgb(24,23,67) 50%);
   height: 70vh;
   display: flex;
   flex: 1;

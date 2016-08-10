@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import PictureListItem from './PictureListItem';
 import { toolbox } from './assets';
+import './Stack.css';
 
 const toolboxSubset = [
   { 

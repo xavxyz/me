@@ -1,8 +1,7 @@
-.Stack {
-  display: flex;
-  flex-direction: column;
+.Stack > *:first-child {
+  margin-bottom: 40px;
 }
 
-.Stack__content {
-  margin-top: 40px;
+.Stack > *:last-child {
+  margin-bottom: 0;
 }

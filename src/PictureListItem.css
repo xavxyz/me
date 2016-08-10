@@ -2,7 +2,7 @@
   display: flex;
   padding: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 @media all and (max-width:500px) {
@@ -13,14 +13,12 @@
 
 .PictureListItem__picture {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-basis: 150px;
+  flex-basis: 140px;
 }
 
 .PictureListItem__picture img {
   width: 120px;
-  height: 120px;
 }
 
 .PictureListItem__picture--with-border {
@@ -30,9 +28,10 @@
 
 .PictureListItem__content {
   font-size: 1.2em;
-  flex: 1 1 60%;
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
+  flex-basis: 700px;
 }
 
 .PictureListItem__text {
