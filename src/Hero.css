@@ -14,13 +14,13 @@
     height: 100vh;
   }
 
-  .Hero__picture > img {
+  .Hero__picture img {
     width: 200px;
     height: 150px;
   }
 }
 
-.Hero__picture > img {
+.Hero__picture img {
   width: 400px;
   height: 300px;
 }
