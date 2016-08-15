@@ -1,18 +1,29 @@
 import React from 'react';
 import Hero from './Hero';
+import Header from './Header';
 import Benefits from './Benefits';
 import Testimonial from './Testimonial';
 import Stack from './Stack';
 import CallToAction from './CallToAction';
 
 
-import { testimonials } from './assets';
+import { hero, testimonials } from './assets';
 
 import './App.css';
 
 const App = () => (
   <div className="App">
     <Hero />
+    
+    <div className="App__me">
+      <img src={hero.me} alt="Me" />
+      <Header
+        main="Hello, I'm Xavier Cazalot"
+        color="both"
+        meta="I’m an entrepreneur and a software engineer."
+        animatedWordIndex={0}
+      />
+    </div>
 
     <Benefits />
 

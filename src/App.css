@@ -13,3 +13,14 @@
 .App > *:not(:first-child) {
   margin-top: 60px;
 }
+
+.App__me {
+  position: absolute;
+  top: calc(70vh - 2em - 110px);
+  display: flex;
+  align-items: center;
+}
+
+.App__me img {
+  width: 160px;
+}

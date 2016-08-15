@@ -6,7 +6,7 @@ import Header from './Header';
 const Hero = () => (
   <div className="Hero">
     <Header 
-      main="Consultant, Fullstack Javascript"
+      main="Consultant, Fullstack Javascript Engineer"
       meta="I build modern webapps to help SaaS businesses becoming more profitable."
       color="white" 
       animatedWordIndex={1}

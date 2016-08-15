@@ -44,3 +44,17 @@
 .Header--dark > .Header__meta {
   color: #4C4D72;
 }
+
+.Header--both {
+  margin-left: 30px;
+}
+
+.Header--both > .Header__main {
+  color: #eff5fe;
+  padding-bottom: 15px;
+}
+
+.Header--both > .Header__meta {
+  color: #4C4D72;
+  padding-top: 15px;
+}
