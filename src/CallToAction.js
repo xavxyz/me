@@ -1,13 +1,76 @@
 import React from 'react';
 import Header from './Header';
 
-const CallToAction = () => (
-  <Header 
-    main="I'm available for hire"
-    meta="Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!"
-    color="dark"
-    animatedWordIndex={1}
-  />
-);
+import './CallToAction.css';
+
+class CallToAction extends React.Component {
+  constructor() {
+    super();
+    this.submitForm = this.submitForm.bind(this);
+    this.storeChanges = this.storeChanges.bind(this);
+
+    this.state = {
+      name: '',
+      email: '',
+    };
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    
+    const clientData = {
+      name: this.state.name,
+      email: this.state.email
+    };
+
+    // fetch mailchimp w/o double opt-in
+    console.log(clientData);
+
+    this.setState({
+      ...this.state,
+      afterSubmit: true
+    });
+  }
+
+  storeChanges(field) {
+    return e => {
+      this.setState({
+        ...this.state, 
+        [field]: e.target.value,
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Header 
+          main="I'm available for hire"
+          meta="Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!"
+          color="dark"
+          animatedWordIndex={ 1 }
+        />
+        {
+          this.state.afterSubmit ? (
+            <div className="CallToAction__afterSubmit">
+              <Header
+                main="Success!"
+                meta="Will be back soon"
+                color="dark"
+                animatedWordIndex={ 0 }
+              />
+            </div>
+          ) : (
+            <form className="CallToAction" onSubmit={ this.submitForm }>
+              <input type="text" name="name" value={this.state.name} onChange={this.storeChanges('name')} placeholder="Your Firstname" />
+              <input type="text" name="email" value={this.state.email} onChange={this.storeChanges('email')}placeholder="Your Email" />
+              <button className="CallToAction__submit"><span>Let's go to work!</span></button>
+            </form>
+          )
+        }
+      </div>
+    )
+  }
+};
 
 export default CallToAction;

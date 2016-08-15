@@ -21,7 +21,7 @@ const App = () => (
         main="Hello, I'm Xavier Cazalot"
         color="both"
         meta="I’m an entrepreneur and a software engineer."
-        animatedWordIndex={0}
+        animatedWordIndex={2}
       />
     </div>
 

@@ -9,7 +9,7 @@ const Hero = () => (
       main="Consultant, Fullstack Javascript Engineer"
       meta="I build modern webapps to help SaaS businesses becoming more profitable."
       color="white" 
-      animatedWordIndex={1}
+      animatedWordIndex={0}
     />
     <div className="Hero__picture">
       <img src={ hero.rocket } alt="Rocket consulting" />
