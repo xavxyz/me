@@ -17,25 +17,33 @@ class CallToAction extends React.Component {
 
   submitForm(e) {
     e.preventDefault();
-    
-    const clientData = {
-      name: this.state.name,
-      email: this.state.email
-    };
 
-    // fetch mailchimp w/o double opt-in
-    console.log(clientData);
-
-    this.setState({
-      ...this.state,
-      afterSubmit: true
+    const body = new FormData();
+    body.append("apikey", "30a132442b5670ca669fd74b3641afec-us13");
+    body.append("id", "1c43f2f329");
+    body.append("email", {email: this.state.email});
+    body.append("double_optin", false);
+    body.append("merge_vars", {
+      FNAME: this.state.name
     });
+
+    fetch('https://us13.api.mailchimp.com/2.0/lists/subscribe.json', {
+      method: 'POST',
+      body,
+      mode: 'no-cors',
+    })
+    .then(res => {
+      console.log(res.json());
+      this.setState({
+        afterSubmit: true
+      });
+    });
+
   }
 
   storeChanges(field) {
     return e => {
       this.setState({
-        ...this.state, 
         [field]: e.target.value,
       });
     }
