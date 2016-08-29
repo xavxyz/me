@@ -31,7 +31,9 @@
 .CallToAction__submit:hover {
   box-shadow: inset 0 8px #fff;
   cursor: pointer;
-  line-height: 2.1em;
+  margin-top: 0.05em;
+  padding-bottom: 0.3em;
+  padding-top: 0.5em;
 }
 
 .CallToAction__afterSubmit {
