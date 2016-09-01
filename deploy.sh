@@ -1,4 +1,4 @@
-git commit -am "🏠"
+git commit -am "deploy 🚀"
 git checkout -B gh-pages
 git add -f build
 git commit -am "🛠"

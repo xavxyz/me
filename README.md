@@ -3,7 +3,7 @@
 Work in progress demo: http://xavcz.github.io/cazalot-bros/
 
 ### Goals
-1. Make more profit as consultant software engineer
+1. Showcase my job, consultant software engineer
 2. Work on my design & front-end skills
 
 ### Trigger
