@@ -1,0 +1,60 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Header__main {
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 1.2px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  cursor:grab;
+}
+
+.Header__main span {
+  display: inline-block;
+  transition: transform 0.2s;
+  cursor:grabbing;
+}
+
+.Header__main span:hover {
+  transform: translateY(-20px) rotate(10deg) scale(2);
+}
+
+.Header__meta {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.Header--white {
+  color: #eff5fe;
+}
+
+.Header--white > .Header__meta {
+  color: rgb(222,232,253);
+}
+
+.Header--dark {
+  color: rgb(24,23,67);
+}
+
+.Header--dark > .Header__meta {
+  color: #4C4D72;
+}
+
+.Header--both {
+  margin-left: 30px;
+}
+
+.Header--both > .Header__main {
+  color: #eff5fe;
+  padding-bottom: 15px;
+}
+
+.Header--both > .Header__meta {
+  color: #4C4D72;
+  padding-top: 15px;
+}

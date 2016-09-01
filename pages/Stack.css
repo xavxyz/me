@@ -1,0 +1,7 @@
+.Stack > *:first-child {
+  margin-bottom: 40px;
+}
+
+.Stack > *:last-child {
+  margin-bottom: 0;
+}
