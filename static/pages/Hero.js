@@ -7,7 +7,7 @@ const Hero = () => (
   <div className="Hero">
     <Header 
       main="Consultant, Fullstack Javascript Engineer"
-      meta="I build modern webapps to help SaaS businesses becoming more profitable."
+      meta="I build modern webapps to help SaaS businesses become more profitable."
       color="white" 
       animatedWordIndex={0}
     />
