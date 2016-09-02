@@ -15,7 +15,7 @@ module.exports = React.createClass({
 
     const title = DocumentTitle.peek()
     const description = "Xavier Cazalot, Consultant, Fullstack JavaScript Engineer";
-    const url = "http://xav.cz";
+    const url = "http://xavcz.github.io/cazalot-bros/";
     const image = "https://d13yacurqjgara.cloudfront.net/users/39185/screenshots/2380677/helmet.jpg"; // MadeByElvis FTW
 
     const meta = [
