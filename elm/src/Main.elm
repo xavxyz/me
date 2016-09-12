@@ -23,7 +23,7 @@ main =
 submitForm : String -> String -> Cmd Msg
 submitForm firstname email =
   let 
-    url = "http://xav-express.herokuapp.com/email?firstname="
+    url = "https://xav-express.herokuapp.com/email?firstname="
           ++ firstname
           ++ "&email="
           ++ email

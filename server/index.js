@@ -3,7 +3,7 @@ const sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.
 const app = express();
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://xavcz.github.io/cazalot-bros/', 'http://localhost:3000', 'http://xav.cz'];
+  const allowedOrigins = ['https://xavcz.github.io/cazalot-bros/', 'http://localhost:3000', 'http://xav.cz'];
   
   const origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
