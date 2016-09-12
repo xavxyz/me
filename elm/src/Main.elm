@@ -55,7 +55,7 @@ viewCallToAction model =
       [ div [ class "Header__main" ]
         [ text "Awesome!" ]
       , span [ class "Header__meta" ]
-        [ text "I'll get back to you really soon!" ]
+        [ text "I'll get back to you soon! 🚀" ]
       ]
     ]
   else 
