@@ -1,3 +1,29 @@
+var _user$project$Main$initialModel = {email: '', firstname: '', submitted: false, errorMessage: _elm_lang$core$Maybe$Nothing};
+var _user$project$Main$Model = F4(
+	function (a, b, c, d) {
+		return {email: a, firstname: b, submitted: c, errorMessage: d};
+	});
+var _user$project$Main$HandleSubmitError = function (a) {
+	return {ctor: 'HandleSubmitError', _0: a};
+};
+var _user$project$Main$HandleSubmitResponse = function (a) {
+	return {ctor: 'HandleSubmitResponse', _0: a};
+};
+var _user$project$Main$submitForm = F2(
+	function (firstname, email) {
+		var url = A2(
+			_elm_lang$core$Basics_ops['++'],
+			'http://xav-express.herokuapp.com/email?firstname=',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				firstname,
+				A2(_elm_lang$core$Basics_ops['++'], '&email=', email)));
+		return A3(
+			_elm_lang$core$Task$perform,
+			_user$project$Main$HandleSubmitError,
+			_user$project$Main$HandleSubmitResponse,
+			A2(_evancz$elm_http$Http$get, _elm_lang$core$Json_Decode$bool, url));
+	});
 var _user$project$Main$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
@@ -18,14 +44,36 @@ var _user$project$Main$update = F2(
 						{email: _p0._0}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
+			case 'SubmitForm':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: A2(_user$project$Main$submitForm, model.firstname, model.email)
+				};
+			case 'HandleSubmitResponse':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{submitted: _p0._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 			default:
-				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+				var _p1 = _p0._0;
+				if (_p1.ctor === 'UnexpectedPayload') {
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								errorMessage: _elm_lang$core$Maybe$Just(_p1._0)
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+				}
 		}
-	});
-var _user$project$Main$initialModel = {email: '', firstname: '', submitted: false};
-var _user$project$Main$Model = F3(
-	function (a, b, c) {
-		return {email: a, firstname: b, submitted: c};
 	});
 var _user$project$Main$SubmitForm = {ctor: 'SubmitForm'};
 var _user$project$Main$SetFirstname = function (a) {
@@ -33,6 +81,89 @@ var _user$project$Main$SetFirstname = function (a) {
 };
 var _user$project$Main$SetEmail = function (a) {
 	return {ctor: 'SetEmail', _0: a};
+};
+var _user$project$Main$viewCallToAction = function (model) {
+	return model.submitted ? A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('CallToAction__afterSubmit')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('Header Header--dark')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('Header__main')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('Awesome!')
+							])),
+						A2(
+						_elm_lang$html$Html$span,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('Header__meta')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('I\'ll get back to you really soon!')
+							]))
+					]))
+			])) : A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('CallToAction')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$input,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$name('firstname'),
+						_elm_lang$html$Html_Attributes$placeholder('Your Firstname'),
+						_elm_lang$html$Html_Attributes$type$('text'),
+						_elm_lang$html$Html_Events$onInput(_user$project$Main$SetFirstname),
+						_elm_lang$html$Html_Attributes$defaultValue(model.firstname)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[])),
+				A2(
+				_elm_lang$html$Html$input,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$name('email'),
+						_elm_lang$html$Html_Attributes$placeholder('Your Email'),
+						_elm_lang$html$Html_Attributes$type$('email'),
+						_elm_lang$html$Html_Events$onInput(_user$project$Main$SetEmail),
+						_elm_lang$html$Html_Attributes$defaultValue(model.email)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[])),
+				A2(
+				_elm_lang$html$Html$button,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('CallToAction__submit'),
+						_elm_lang$html$Html_Events$onClick(_user$project$Main$SubmitForm)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('Let\'s go to work!')
+					]))
+			]));
 };
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -588,50 +719,7 @@ var _user$project$Main$view = function (model) {
 										_elm_lang$html$Html$text('Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!')
 									]))
 							])),
-						A2(
-						_elm_lang$html$Html$form,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Attributes$class('CallToAction')
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								A2(
-								_elm_lang$html$Html$input,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$name('firstname'),
-										_elm_lang$html$Html_Attributes$placeholder('Your Firstname'),
-										_elm_lang$html$Html_Attributes$type$('text'),
-										_elm_lang$html$Html_Events$onInput(_user$project$Main$SetFirstname),
-										_elm_lang$html$Html_Attributes$defaultValue(model.firstname)
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[])),
-								A2(
-								_elm_lang$html$Html$input,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$name('email'),
-										_elm_lang$html$Html_Attributes$placeholder('Your Email'),
-										_elm_lang$html$Html_Attributes$type$('email'),
-										_elm_lang$html$Html_Events$onInput(_user$project$Main$SetEmail),
-										_elm_lang$html$Html_Attributes$defaultValue(model.email)
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[])),
-								A2(
-								_elm_lang$html$Html$button,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$class('CallToAction__submit'),
-										_elm_lang$html$Html_Events$onClick(_user$project$Main$SubmitForm)
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html$text('Let\'s go to work!')
-									]))
-							]))
+						_user$project$Main$viewCallToAction(model)
 					])),
 				A2(
 				_elm_lang$html$Html$div,
@@ -707,7 +795,7 @@ var _user$project$Main$main = {
 			view: _user$project$Main$view,
 			update: _user$project$Main$update,
 			init: {ctor: '_Tuple2', _0: _user$project$Main$initialModel, _1: _elm_lang$core$Platform_Cmd$none},
-			subscriptions: function (_p1) {
+			subscriptions: function (_p2) {
 				return _elm_lang$core$Platform_Sub$none;
 			}
 		})

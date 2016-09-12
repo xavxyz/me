@@ -3,7 +3,7 @@ const sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.
 const app = express();
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://xavcz.github.io/cazalot-bros/', 'http://localhost:8000', 'http://xav.cz'];
+  const allowedOrigins = ['http://xavcz.github.io/cazalot-bros/', 'http://localhost:3000', 'http://xav.cz'];
   
   const origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
@@ -28,12 +28,12 @@ app.get('/email', (req, res, next) => {
     }, function(err, json) {
       if (err) { 
         console.error(err);
-        res.send('error');
+        res.send(false);
       }
-      res.json(json);
+      res.json(true);
     });
   } else {
-    res.json({ok: false});
+    res.json(false);
   }
 });
 

@@ -4,9 +4,11 @@ import Html exposing (..)
 import Html.App as Html
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
+import Http
 import Task exposing (Task)
 import Json.Decode exposing (Decoder)
 import Json.Decode.Pipeline exposing (..)
+
 
 main : Program Never
 main =
@@ -17,23 +19,51 @@ main =
     , subscriptions = \_ -> Sub.none
     }
 
+
+submitForm : String -> String -> Cmd Msg
+submitForm firstname email =
+  let 
+    url = "http://xav-express.herokuapp.com/email?firstname="
+          ++ firstname
+          ++ "&email="
+          ++ email
+  in
+    Http.get Json.Decode.bool url
+      |> Task.perform HandleSubmitError HandleSubmitResponse
+
+
 type alias Model =
   { email : String
   , firstname : String
   , submitted : Bool
+  , errorMessage : Maybe String
   }
-
-type Msg 
-  = SetEmail String
-  | SetFirstname String
-  | SubmitForm
 
 initialModel : Model
 initialModel = 
   { email = ""
   , firstname = ""
   , submitted = False
+  , errorMessage = Nothing
   }
+
+viewCallToAction : Model -> Html Msg
+viewCallToAction model =
+  if model.submitted then
+    div [ class "CallToAction__afterSubmit" ]
+    [ div [ class "Header Header--dark" ]
+      [ div [ class "Header__main" ]
+        [ text "Awesome!" ]
+      , span [ class "Header__meta" ]
+        [ text "I'll get back to you really soon!" ]
+      ]
+    ]
+  else 
+    div [ class "CallToAction" ]
+      [ input [ name "firstname", placeholder "Your Firstname", type' "text", onInput SetFirstname, defaultValue model.firstname ] []
+      , input [ name "email", placeholder "Your Email", type' "email", onInput SetEmail, defaultValue model.email ] []
+      , button [ class "CallToAction__submit", onClick SubmitForm ] [ text "Let's go to work!" ]
+      ]
 
 view : Model -> Html Msg
 view model =
@@ -153,11 +183,7 @@ view model =
         [ div [ class "Header__main" ] [ text "I'm available for hire" ]
         , span [ class "Header__meta" ] [ text "Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!" ]
         ]
-        , Html.form [ class "CallToAction" ]
-        [ input [ name "firstname", placeholder "Your Firstname", type' "text", onInput SetFirstname, defaultValue model.firstname ] []
-        , input [ name "email", placeholder "Your Email", type' "email", onInput SetEmail, defaultValue model.email ] []
-        , button [ class "CallToAction__submit", onClick SubmitForm ] [ text "Let's go to work!" ]
-        ]
+        , viewCallToAction model 
       ]
     , div [ class "Testimonial" ]
       [ div [ class "PictureListItem" ]
@@ -175,12 +201,33 @@ view model =
       ]
     ]
 
+
+type Msg 
+  = SetEmail String
+  | SetFirstname String
+  | SubmitForm
+  | HandleSubmitResponse Bool
+  | HandleSubmitError Http.Error
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
   case msg of
     SetFirstname firstname ->
       ( { model | firstname = firstname }, Cmd.none )
+
     SetEmail email ->
       ( { model | email = email }, Cmd.none )
-    _ ->
-      ( model, Cmd.none )
+
+    SubmitForm ->
+      ( model, submitForm model.firstname model.email )
+
+    HandleSubmitResponse submitted ->
+      ( { model | submitted = submitted }, Cmd.none )
+
+    HandleSubmitError error ->
+      case error of 
+        Http.UnexpectedPayload errorMessage ->
+          ( { model | errorMessage = Just errorMessage }, Cmd.none )
+        _ -> 
+          ( model, Cmd.none )
