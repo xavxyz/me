@@ -13,7 +13,7 @@ var _user$project$Main$submitForm = F2(
 	function (firstname, email) {
 		var url = A2(
 			_elm_lang$core$Basics_ops['++'],
-			'http://xav-express.herokuapp.com/email?firstname=',
+			'https://xav-express.herokuapp.com/email?firstname=',
 			A2(
 				_elm_lang$core$Basics_ops['++'],
 				firstname,
