@@ -1,7 +1,39 @@
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		return model;
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'SetFirstname':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{firstname: _p0._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'SetEmail':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{email: _p0._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+		}
 	});
+var _user$project$Main$initialModel = {email: '', firstname: '', submitted: false};
+var _user$project$Main$Model = F3(
+	function (a, b, c) {
+		return {email: a, firstname: b, submitted: c};
+	});
+var _user$project$Main$SubmitForm = {ctor: 'SubmitForm'};
+var _user$project$Main$SetFirstname = function (a) {
+	return {ctor: 'SetFirstname', _0: a};
+};
+var _user$project$Main$SetEmail = function (a) {
+	return {ctor: 'SetEmail', _0: a};
+};
 var _user$project$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -524,22 +556,43 @@ var _user$project$Main$view = function (model) {
 				A2(
 				_elm_lang$html$Html$div,
 				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$id('mc_embed_signup')
-					]),
+					[]),
 				_elm_lang$core$Native_List.fromArray(
 					[
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('Header Header--dark')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								A2(
+								_elm_lang$html$Html$div,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$class('Header__main')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('I\'m available for hire')
+									])),
+								A2(
+								_elm_lang$html$Html$span,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$class('Header__meta')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!')
+									]))
+							])),
 						A2(
 						_elm_lang$html$Html$form,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Attributes$action('//hacklearnmake.us13.list-manage.com/subscribe/post?u=9beb9bd4162802837ea34bb53&amp;id=1c43f2f329'),
-								_elm_lang$html$Html_Attributes$class('CallToAction'),
-								_elm_lang$html$Html_Attributes$id('mc-embedded-subscribe-form'),
-								_elm_lang$html$Html_Attributes$method('post'),
-								_elm_lang$html$Html_Attributes$name('mc-embedded-subscribe-form'),
-								A2(_elm_lang$html$Html_Attributes$attribute, 'novalidate', ''),
-								_elm_lang$html$Html_Attributes$target('_blank')
+								_elm_lang$html$Html_Attributes$class('CallToAction')
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
@@ -547,11 +600,11 @@ var _user$project$Main$view = function (model) {
 								_elm_lang$html$Html$input,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Attributes$class('required email'),
-										_elm_lang$html$Html_Attributes$id('mce-FNAME'),
-										_elm_lang$html$Html_Attributes$name('FNAME'),
+										_elm_lang$html$Html_Attributes$name('firstname'),
 										_elm_lang$html$Html_Attributes$placeholder('Your Firstname'),
-										_elm_lang$html$Html_Attributes$type$('text')
+										_elm_lang$html$Html_Attributes$type$('text'),
+										_elm_lang$html$Html_Events$onInput(_user$project$Main$SetFirstname),
+										_elm_lang$html$Html_Attributes$defaultValue(model.firstname)
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[])),
@@ -559,26 +612,25 @@ var _user$project$Main$view = function (model) {
 								_elm_lang$html$Html$input,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Attributes$class('required email'),
-										_elm_lang$html$Html_Attributes$id('mce-EMAIL'),
-										_elm_lang$html$Html_Attributes$name('EMAIL'),
+										_elm_lang$html$Html_Attributes$name('email'),
 										_elm_lang$html$Html_Attributes$placeholder('Your Email'),
-										_elm_lang$html$Html_Attributes$type$('email')
+										_elm_lang$html$Html_Attributes$type$('email'),
+										_elm_lang$html$Html_Events$onInput(_user$project$Main$SetEmail),
+										_elm_lang$html$Html_Attributes$defaultValue(model.email)
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[])),
 								A2(
-								_elm_lang$html$Html$input,
+								_elm_lang$html$Html$button,
 								_elm_lang$core$Native_List.fromArray(
 									[
 										_elm_lang$html$Html_Attributes$class('CallToAction__submit'),
-										_elm_lang$html$Html_Attributes$id('mc-embedded-subscribe'),
-										_elm_lang$html$Html_Attributes$name('subscribe'),
-										_elm_lang$html$Html_Attributes$type$('submit'),
-										_elm_lang$html$Html_Attributes$value('Let\'s go to work!')
+										_elm_lang$html$Html_Events$onClick(_user$project$Main$SubmitForm)
 									]),
 								_elm_lang$core$Native_List.fromArray(
-									[]))
+									[
+										_elm_lang$html$Html$text('Let\'s go to work!')
+									]))
 							]))
 					])),
 				A2(
@@ -649,16 +701,14 @@ var _user$project$Main$view = function (model) {
 					]))
 			]));
 };
-var _user$project$Main$initialModel = {email: '', firstname: ''};
 var _user$project$Main$main = {
-	main: _elm_lang$html$Html_App$beginnerProgram(
-		{view: _user$project$Main$view, update: _user$project$Main$update, model: _user$project$Main$initialModel})
+	main: _elm_lang$html$Html_App$program(
+		{
+			view: _user$project$Main$view,
+			update: _user$project$Main$update,
+			init: {ctor: '_Tuple2', _0: _user$project$Main$initialModel, _1: _elm_lang$core$Platform_Cmd$none},
+			subscriptions: function (_p1) {
+				return _elm_lang$core$Platform_Sub$none;
+			}
+		})
 };
-var _user$project$Main$Model = F2(
-	function (a, b) {
-		return {email: a, firstname: b};
-	});
-var _user$project$Main$Msg = F2(
-	function (a, b) {
-		return {operation: a, data: b};
-	});

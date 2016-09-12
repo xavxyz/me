@@ -3,22 +3,36 @@ module Main exposing (..)
 import Html exposing (..)
 import Html.App as Html
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
+import Html.Events exposing (onClick, onInput)
+import Task exposing (Task)
+import Json.Decode exposing (Decoder)
+import Json.Decode.Pipeline exposing (..)
+
+main : Program Never
+main =
+  Html.program
+    { view = view
+    , update = update
+    , init = ( initialModel, Cmd.none )
+    , subscriptions = \_ -> Sub.none
+    }
 
 type alias Model =
   { email : String
   , firstname : String
+  , submitted : Bool
   }
 
-type alias Msg =
-  { operation : String
-  , data : Int
-  }
+type Msg 
+  = SetEmail String
+  | SetFirstname String
+  | SubmitForm
 
 initialModel : Model
 initialModel = 
   { email = ""
   , firstname = ""
+  , submitted = False
   }
 
 view : Model -> Html Msg
@@ -133,14 +147,16 @@ view model =
           ]
         ]
       ]
-    , div [ id "mc_embed_signup" ]
-      [ Html.form [ action "//hacklearnmake.us13.list-manage.com/subscribe/post?u=9beb9bd4162802837ea34bb53&amp;id=1c43f2f329", class "CallToAction", id "mc-embedded-subscribe-form", method "post", name "mc-embedded-subscribe-form", attribute "novalidate" "", target "_blank" ]
-        [ input [ class "required email", id "mce-FNAME", name "FNAME", placeholder "Your Firstname", type' "text" ]
-          []
-        , input [ class "required email", id "mce-EMAIL", name "EMAIL", placeholder "Your Email", type' "email" ]
-          []
-        , input [ class "CallToAction__submit", id "mc-embedded-subscribe", name "subscribe", type' "submit", value "Let's go to work!" ]
-          []
+    , div []
+      [ 
+        div [ class "Header Header--dark" ]
+        [ div [ class "Header__main" ] [ text "I'm available for hire" ]
+        , span [ class "Header__meta" ] [ text "Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!" ]
+        ]
+        , Html.form [ class "CallToAction" ]
+        [ input [ name "firstname", placeholder "Your Firstname", type' "text", onInput SetFirstname, defaultValue model.firstname ] []
+        , input [ name "email", placeholder "Your Email", type' "email", onInput SetEmail, defaultValue model.email ] []
+        , button [ class "CallToAction__submit", onClick SubmitForm ] [ text "Let's go to work!" ]
         ]
       ]
     , div [ class "Testimonial" ]
@@ -159,13 +175,12 @@ view model =
       ]
     ]
 
-update : Msg -> Model -> Model
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-  model
-
-main =
-  Html.beginnerProgram
-    { view = view
-    , update = update
-    , model = initialModel
-    }
+  case msg of
+    SetFirstname firstname ->
+      ( { model | firstname = firstname }, Cmd.none )
+    SetEmail email ->
+      ( { model | email = email }, Cmd.none )
+    _ ->
+      ( model, Cmd.none )
