@@ -117,7 +117,7 @@ var _user$project$Main$viewCallToAction = function (model) {
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html$text('I\'ll get back to you really soon!')
+								_elm_lang$html$Html$text('I\'ll get back to you soon! 🚀')
 							]))
 					]))
 			])) : A2(
