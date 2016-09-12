@@ -1,0 +1,283 @@
+/* Resets */
+html {
+    box-sizing: border-box
+}
+
+*,:after,:before {
+    box-sizing: inherit
+}
+
+body {
+    font-family: Open Sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #181743
+}
+
+/* App */
+.App {
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+.App>* {
+    margin-bottom: 60px;
+    padding-left: 100px;
+    padding-right: 100px
+}
+
+.App>:not(:first-child) {
+    margin-top: 60px
+}
+
+.App__me {
+    position: absolute;
+    top: calc(70vh - 2em - 110px);
+    display: flex;
+    align-items: center
+}
+
+.App__me img {
+    width: 160px
+}
+
+
+/* Hero */
+
+.Hero {
+    background: linear-gradient(110deg, #2376ae, #181743 50%);
+    height: 70vh;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center
+}
+
+@media all and (max-width: 800px) {
+    .Hero {
+        padding-top: 10px;
+        flex-direction: column;
+        height: 100vh
+    }
+
+    .Hero__picture img {
+        width: 200px;
+        height: 150px
+    }
+
+}
+
+.Hero__picture img {
+    width: 400px;
+    height: 300px;
+    transition: transform .5s;
+    cursor: zoom-in
+}
+
+.Hero__picture img:hover {
+    transform: translateY(-20px) rotate(10deg) scale(2)
+}
+
+
+/* Header */
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.Header__main {
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .2);
+    cursor: -webkit-grab;
+    cursor: grab
+}
+
+.Header__main span {
+    display: inline-block;
+    transition: transform .2s;
+    cursor: -webkit-grabbing;
+    cursor: grabbing
+}
+
+.Header__main span:hover {
+    transform: translateY(-20px) rotate(10deg) scale(2)
+}
+
+.Header__meta {
+    font-size: 1.5em;
+    font-weight: 300
+}
+
+.Header--white {
+    color: #eff5fe
+}
+
+.Header--white>.Header__meta {
+    color: #dee8fd
+}
+
+.Header--dark {
+    color: #181743
+}
+
+.Header--dark>.Header__meta {
+    color: #4c4d72
+}
+
+.Header--both {
+    margin-left: 30px
+}
+
+.Header--both>.Header__main {
+    color: #eff5fe;
+    padding-bottom: 15px
+}
+
+.Header--both>.Header__meta {
+    color: #4c4d72;
+    padding-top: 15px
+}
+
+
+/* Benefits */
+
+.Benefits>:not(:last-child) {
+    margin-bottom: 40px
+}
+
+.Benefits__block {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px
+}
+
+.Benefits__title {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #133c99
+}
+
+.Benefits__details {
+    font-size: 1.2em
+}
+
+/* Testimonial */
+
+.Testimonial {
+    background: linear-gradient(110deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2))
+}
+
+.PictureListItem {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-start
+}
+
+@media all and (max-width: 500px) {
+    .PictureListItem {
+        flex-direction: column
+    }
+
+}
+
+.PictureListItem__picture {
+    display: flex;
+    align-items: center;
+    flex-basis: 140px
+}
+
+.PictureListItem__picture img {
+    width: 120px
+}
+
+.PictureListItem__picture--with-border {
+    border: 10px solid #eee;
+    border-radius: 99px
+}
+
+.PictureListItem__content {
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-basis: 700px
+}
+
+.PictureListItem__meta {
+    margin-top: 15px
+}
+
+/* Stack */
+
+.Stack>:first-child {
+    margin-bottom: 40px
+}
+
+.Stack>:last-child {
+    margin-bottom: 0
+}
+
+/* Call To Action */
+
+.CallToAction {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 40px
+}
+
+.CallToAction>* {
+    border: 4px solid #181743;
+    padding: 10px;
+    background: #fff;
+    font-weight: 700;
+    line-height: 1.5em;
+    font-size: 1.5em;
+    outline: 0;
+    flex-shrink: 1;
+    flex-basis: 350px;
+    margin-right: 40px;
+    border-radius: 4px
+}
+
+.CallToAction__submit {
+    background-color: #282a64;
+    border: 0;
+    line-height: 2em;
+    box-shadow: inset 0 -8px #181743;
+    color: #fff;
+    z-index: 2
+}
+
+.CallToAction__submit:hover {
+    box-shadow: inset 0 8px #fff;
+    cursor: pointer;
+    margin-top: .01em;
+    padding-bottom: .3em;
+    padding-top: .5em
+}
+
+.CallToAction__afterSubmit {
+    margin-top: 40px
+}
+
+@media all and (max-width: 990px) {
+    .CallToAction {
+        flex-direction: column;
+        justify-content: center
+    }
+
+    .CallToAction>* {
+        flex-basis: 2.5em;
+        margin-bottom: 10px
+    }
+
+}
