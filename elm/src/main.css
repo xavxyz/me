@@ -61,7 +61,7 @@ a:hover {
 
 .Hero {
     background: linear-gradient(110deg, #2376ae, #181743 50%);
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -94,6 +94,7 @@ a:hover {
 .Hero__me {
     position: absolute;
     bottom: -80px; /* positioned compared to the size of the img */
+    left:100px; /* fix bug on safari & firefox */
     display: flex;
     align-items: center
 }
