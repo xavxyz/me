@@ -1,6 +1,7 @@
 const express = require('express');
 const sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
 const app = express();
+const http = require("http");
 
 app.use((req, res, next) => {
   const allowedOrigins = ['https://xavcz.github.io', 'http://localhost:3000', 'http://xav.cz'];
@@ -37,6 +38,9 @@ app.get('/email', (req, res, next) => {
   }
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 5000);
+
+setInterval(() => { 
+  http.get("http://xav-express.herokuapp.com");
   console.log('Xav Mailer Up & Running!');
-});
+}, 300000);
