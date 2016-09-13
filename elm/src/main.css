@@ -27,6 +27,14 @@ body {
     padding-right: 100px
 }
 
+@media all and (max-width: 800px) {
+    .App>* {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+}
+
 .App>:not(:first-child) {
     margin-top: 60px
 }
@@ -42,6 +50,12 @@ body {
     width: 160px
 }
 
+/* patch, tbd how to showcase "ma bonne bouille" */
+@media all and (max-width: 800px) {
+    .App__me {
+        display:  none;
+    }
+}
 
 /* Hero */
 
@@ -57,13 +71,11 @@ body {
 @media all and (max-width: 800px) {
     .Hero {
         padding-top: 10px;
-        flex-direction: column;
-        height: 100vh
     }
 
-    .Hero__picture img {
-        width: 200px;
-        height: 150px
+    .Hero__picture
+     {
+        display: none;
     }
 
 }
@@ -195,7 +207,12 @@ body {
     display: flex;
     flex-direction: column;
     flex-shrink: 1;
-    flex-basis: 700px
+}
+
+@media all and (min-width: 800px) {
+    .PictureListItem__content {
+        flex-basis: 700px
+    }
 }
 
 .PictureListItem__meta {
@@ -231,8 +248,13 @@ body {
     outline: 0;
     flex-shrink: 1;
     flex-basis: 350px;
-    margin-right: 40px;
     border-radius: 4px
+}
+
+@media all and (min-width: 800px) {
+    .CallToAction>* {
+        margin-right: 40px;
+    }
 }
 
 .CallToAction__submit {
