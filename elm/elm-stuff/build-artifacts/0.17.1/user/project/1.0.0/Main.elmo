@@ -283,52 +283,52 @@ var _user$project$Main$view = function (model) {
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[]))
-							]))
-					])),
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('App__me')
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						A2(
-						_elm_lang$html$Html$img,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Attributes$alt('Me'),
-								_elm_lang$html$Html_Attributes$src('https://res.cloudinary.com/xavcz/image/upload/v1473680137/me_srabkd.png')
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[])),
+							])),
 						A2(
 						_elm_lang$html$Html$div,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Attributes$class('Header Header--both')
+								_elm_lang$html$Html_Attributes$class('Hero__me')
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
 								A2(
+								_elm_lang$html$Html$img,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$alt('Me'),
+										_elm_lang$html$Html_Attributes$src('https://res.cloudinary.com/xavcz/image/upload/v1473680137/me_srabkd.png')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[])),
+								A2(
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Attributes$class('Header__main')
+										_elm_lang$html$Html_Attributes$class('Header Header--both')
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html$text('Hello, I\'m Xavier Cazalot')
-									])),
-								A2(
-								_elm_lang$html$Html$span,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$class('Header__meta')
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html$text('I’m an entrepreneur and a software engineer.')
+										A2(
+										_elm_lang$html$Html$div,
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_elm_lang$html$Html_Attributes$class('Header__main')
+											]),
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_elm_lang$html$Html$text('Hello, I\'m Xavier Cazalot')
+											])),
+										A2(
+										_elm_lang$html$Html$span,
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_elm_lang$html$Html_Attributes$class('Header__meta')
+											]),
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_elm_lang$html$Html$text('I’m an entrepreneur and a software engineer.')
+											]))
 									]))
 							]))
 					])),

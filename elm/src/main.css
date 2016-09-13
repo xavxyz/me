@@ -57,24 +57,6 @@ a:hover {
     margin-bottom: 20px
 }
 
-.App__me {
-    position: absolute;
-    top: calc(70vh - 2em - 110px);
-    display: flex;
-    align-items: center
-}
-
-.App__me img {
-    width: 160px
-}
-
-/* patch, tbd how to showcase "ma bonne bouille" */
-@media all and (max-width: 800px) {
-    .App__me {
-        display:  none;
-    }
-}
-
 /* Hero */
 
 .Hero {
@@ -83,7 +65,8 @@ a:hover {
     display: flex;
     flex: 1;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    position: relative;
 }
 
 @media all and (max-width: 800px) {
@@ -91,8 +74,7 @@ a:hover {
         padding-top: 10px;
     }
 
-    .Hero__picture
-     {
+    .Hero__picture {
         display: none;
     }
 
@@ -109,6 +91,23 @@ a:hover {
     transform: translateY(-20px) rotate(10deg) scale(2)
 }
 
+.Hero__me {
+    position: absolute;
+    bottom: -80px; /* positioned compared to the size of the img */
+    display: flex;
+    align-items: center
+}
+
+.Hero__me img {
+    width: 160px
+}
+
+/* patch, tbd how to showcase "ma bonne bouille" */
+@media all and (max-width: 800px) {
+    .Hero__me {
+        display:  none;
+    }
+}
 
 /* Header */
 
