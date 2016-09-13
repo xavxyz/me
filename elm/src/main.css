@@ -14,6 +14,20 @@ body {
     color: #181743
 }
 
+a {
+    font-weight: 700;
+    text-decoration: none;
+    transition: ease-out 300ms all 0ms;
+}
+
+a:link, a:active, a:visited {
+    color: #4c4d72;
+}
+
+a:hover {
+    color: #181743;
+}
+
 /* App */
 .App {
     display: flex;
@@ -35,8 +49,12 @@ body {
 
 }
 
-.App>:not(:first-child) {
+.App>:not(:first-child):not(:last-child) {
     margin-top: 60px
+}
+
+.App>:last-child {
+    margin-bottom: 20px
 }
 
 .App__me {
@@ -190,7 +208,8 @@ body {
 .PictureListItem__picture {
     display: flex;
     align-items: center;
-    flex-basis: 140px
+    flex-basis: 140px;
+    margin-right: 25px;
 }
 
 .PictureListItem__picture img {
@@ -207,6 +226,10 @@ body {
     display: flex;
     flex-direction: column;
     flex-shrink: 1;
+}
+
+.PictureListItem__content--in-testimonial {
+    flex-grow: 1;
 }
 
 @media all and (min-width: 800px) {
@@ -235,7 +258,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 40px
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .CallToAction>* {
@@ -290,3 +314,22 @@ body {
     }
 
 }
+
+/* Footer */
+.Footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media all and (max-width: 990px) {
+    .Footer {
+        flex-direction: column;
+        justify-content: center
+    }
+}
+
+.Footer>* {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+

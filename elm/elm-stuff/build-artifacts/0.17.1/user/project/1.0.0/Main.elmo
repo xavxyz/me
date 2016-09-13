@@ -412,7 +412,7 @@ var _user$project$Main$view = function (model) {
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Attributes$class('PictureListItem__content')
+										_elm_lang$html$Html_Attributes$class('PictureListItem__content PictureListItem__content--in-testimonial')
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
@@ -657,7 +657,7 @@ var _user$project$Main$view = function (model) {
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Attributes$class('PictureListItem__content')
+										_elm_lang$html$Html_Attributes$class('PictureListItem__content PictureListItem__content--in-testimonial')
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
@@ -669,7 +669,7 @@ var _user$project$Main$view = function (model) {
 											]),
 										_elm_lang$core$Native_List.fromArray(
 											[
-												_elm_lang$html$Html$text('Resourceful and energetic, Xavier is passionated by choosing the right tools, setting them up, and teaching people how to use them. He has the perfect skills to efficiently bootstrap any project.')
+												_elm_lang$html$Html$text('Resourceful and energetic, Xavier is passionated by choosing the right tools, setting them up, and teaching people how to use them. He has the perfect skills to efficiently bootstrap any project. ')
 											])),
 										A2(
 										_elm_lang$html$Html$div,
@@ -719,7 +719,73 @@ var _user$project$Main$view = function (model) {
 										_elm_lang$html$Html$text('Each project begins with a conversation. If you’re ready to get the conversation rolling, enter your contact in the boxes below!')
 									]))
 							])),
-						_user$project$Main$viewCallToAction(model)
+						_user$project$Main$viewCallToAction(model),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('Header__meta')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text(' You can also reach me on '),
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$href('https://twitter.com/xav_cz'),
+										_elm_lang$html$Html_Attributes$target('_blank')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Twitter')
+									])),
+								_elm_lang$html$Html$text('.')
+							])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('Header__meta')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('You may fork my code on '),
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$href('https://github.com/xavcz'),
+										_elm_lang$html$Html_Attributes$target('_blank')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('GitHub')
+									])),
+								_elm_lang$html$Html$text('.')
+							])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('Header__meta')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('And you are invited to read me on '),
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$href('https://medium.com/hack-learn-make'),
+										_elm_lang$html$Html_Attributes$target('_blank')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Medium')
+									])),
+								_elm_lang$html$Html$text('.')
+							]))
 					])),
 				A2(
 				_elm_lang$html$Html$div,
@@ -760,7 +826,7 @@ var _user$project$Main$view = function (model) {
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Attributes$class('PictureListItem__content')
+										_elm_lang$html$Html_Attributes$class('PictureListItem__content PictureListItem__content--in-testimonial')
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
@@ -785,6 +851,75 @@ var _user$project$Main$view = function (model) {
 												_elm_lang$html$Html$text('— Chris de Rouck, CTO @ iDronect')
 											]))
 									]))
+							]))
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('Footer')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('👍 Thanks '),
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$href('http://dominikvayrynen.com/'),
+										_elm_lang$html$Html_Attributes$target('_blank')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Dominik Väyrynen')
+									])),
+								_elm_lang$html$Html$text(' for the design guidance.')
+							])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('🚀 Illustration by '),
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$href(' https://dribbble.com/Madebyelvis'),
+										_elm_lang$html$Html_Attributes$target('_blank')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('MadeByElvis')
+									])),
+								_elm_lang$html$Html$text('.')
+							])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html$text('🛠 This fancy page has been built with '),
+								A2(
+								_elm_lang$html$Html$a,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$href('https://github.com/xavcz/cazalot-bros'),
+										_elm_lang$html$Html_Attributes$target('_blank')
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Elm')
+									])),
+								_elm_lang$html$Html$text('!')
 							]))
 					]))
 			]));
