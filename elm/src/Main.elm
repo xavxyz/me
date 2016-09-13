@@ -7,7 +7,6 @@ import Html.Events exposing (onClick, onInput)
 import Http
 import Task exposing (Task)
 import Json.Decode exposing (Decoder)
-import Json.Decode.Pipeline exposing (..)
 
 
 main : Program Never
@@ -36,6 +35,7 @@ type alias Model =
   { email : String
   , firstname : String
   , submitted : Bool
+  , submitLoading : Bool
   , errorMessage : Maybe String
   }
 
@@ -44,8 +44,22 @@ initialModel =
   { email = ""
   , firstname = ""
   , submitted = False
+  , submitLoading = False
   , errorMessage = Nothing
   }
+
+viewSubmitButton : Model -> Html Msg
+viewSubmitButton model =
+  if model.submitLoading then
+    button [ class "CallToAction__submit", disabled True ]
+    [ div [ class "spinner"] 
+      [ div [ class "bounce1" ][]
+      , div [ class "bounce2" ][]
+      , div [ class "bounce3" ][]
+      ] 
+    ]
+  else
+    button [ class "CallToAction__submit", onClick SubmitForm ] [ text "Let's go to work!" ]
 
 viewCallToAction : Model -> Html Msg
 viewCallToAction model =
@@ -62,7 +76,7 @@ viewCallToAction model =
     div [ class "CallToAction" ]
     [ input [ name "firstname", placeholder "Your Firstname", type' "text", onInput SetFirstname, defaultValue model.firstname ] []
     , input [ name "email", placeholder "Your Email", type' "email", onInput SetEmail, defaultValue model.email ] []
-    , button [ class "CallToAction__submit", onClick SubmitForm ] [ text "Let's go to work!" ]
+    , viewSubmitButton model
     ]
 
 view : Model -> Html Msg
@@ -229,14 +243,15 @@ update msg model =
       ( { model | email = email }, Cmd.none )
 
     SubmitForm ->
-      ( model, submitForm model.firstname model.email )
+      ( { model | submitLoading = True }, submitForm model.firstname model.email )
 
     HandleSubmitResponse submitted ->
-      ( { model | submitted = submitted }, Cmd.none )
+      ( { model | submitLoading = False, submitted = submitted }, Cmd.none )
 
+    -- TODO display error message 🤓
     HandleSubmitError error ->
       case error of 
         Http.UnexpectedPayload errorMessage ->
-          ( { model | errorMessage = Just errorMessage }, Cmd.none )
+          ( { model | submitLoading = False, submitted = True, errorMessage = Just errorMessage }, Cmd.none )
         _ -> 
-          ( model, Cmd.none )
+          ( { model | submitLoading = False, submitted = True }, Cmd.none )

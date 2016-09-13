@@ -1,7 +1,7 @@
-var _user$project$Main$initialModel = {email: '', firstname: '', submitted: false, errorMessage: _elm_lang$core$Maybe$Nothing};
-var _user$project$Main$Model = F4(
-	function (a, b, c, d) {
-		return {email: a, firstname: b, submitted: c, errorMessage: d};
+var _user$project$Main$initialModel = {email: '', firstname: '', submitted: false, submitLoading: false, errorMessage: _elm_lang$core$Maybe$Nothing};
+var _user$project$Main$Model = F5(
+	function (a, b, c, d, e) {
+		return {email: a, firstname: b, submitted: c, submitLoading: d, errorMessage: e};
 	});
 var _user$project$Main$HandleSubmitError = function (a) {
 	return {ctor: 'HandleSubmitError', _0: a};
@@ -47,7 +47,9 @@ var _user$project$Main$update = F2(
 			case 'SubmitForm':
 				return {
 					ctor: '_Tuple2',
-					_0: model,
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{submitLoading: true}),
 					_1: A2(_user$project$Main$submitForm, model.firstname, model.email)
 				};
 			case 'HandleSubmitResponse':
@@ -55,7 +57,7 @@ var _user$project$Main$update = F2(
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
-						{submitted: _p0._0}),
+						{submitLoading: false, submitted: _p0._0}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
 			default:
@@ -66,16 +68,79 @@ var _user$project$Main$update = F2(
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
+								submitLoading: false,
+								submitted: true,
 								errorMessage: _elm_lang$core$Maybe$Just(_p1._0)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				} else {
-					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{submitLoading: false, submitted: true}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
 				}
 		}
 	});
 var _user$project$Main$SubmitForm = {ctor: 'SubmitForm'};
+var _user$project$Main$viewSubmitButton = function (model) {
+	return model.submitLoading ? A2(
+		_elm_lang$html$Html$button,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('CallToAction__submit'),
+				_elm_lang$html$Html_Attributes$disabled(true)
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('spinner')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('bounce1')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('bounce2')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('bounce3')
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[]))
+					]))
+			])) : A2(
+		_elm_lang$html$Html$button,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('CallToAction__submit'),
+				_elm_lang$html$Html_Events$onClick(_user$project$Main$SubmitForm)
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html$text('Let\'s go to work!')
+			]));
+};
 var _user$project$Main$SetFirstname = function (a) {
 	return {ctor: 'SetFirstname', _0: a};
 };
@@ -152,17 +217,7 @@ var _user$project$Main$viewCallToAction = function (model) {
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[])),
-				A2(
-				_elm_lang$html$Html$button,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('CallToAction__submit'),
-						_elm_lang$html$Html_Events$onClick(_user$project$Main$SubmitForm)
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Let\'s go to work!')
-					]))
+				_user$project$Main$viewSubmitButton(model)
 			]));
 };
 var _user$project$Main$view = function (model) {
