@@ -311,7 +311,7 @@ var _user$project$Main$view = function (model) {
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html$text('My job is firstly to understand the underlying problems your business is facing, and then providing a solution which fits your needs.')
+										_elm_lang$html$Html$text('I understand your business model: I build the actual value proposition that meets the needs of your customers.')
 									]))
 							])),
 						A2(
@@ -340,7 +340,7 @@ var _user$project$Main$view = function (model) {
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html$text('I come from a mechanical and industrial engineering background: my products are built with the right structure to solve the right problem.')
+										_elm_lang$html$Html$text('I come from a mechanical and industrial engineering background: I design products with the right structure to solve the right problem.')
 									]))
 							])),
 						A2(
@@ -369,7 +369,7 @@ var _user$project$Main$view = function (model) {
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html$text('I believe that the goal is to learn. Being part of Telescope core team, the biggest Meteor + React open-source app, helps me achieve that.')
+										_elm_lang$html$Html$text('I always sharpen my technical skills on different experiments. I\'m also part of Telescope core team, the biggest Meteor + React open-source app.')
 									]))
 							]))
 					])),
