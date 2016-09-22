@@ -153,7 +153,7 @@ view model =
           ]
         , div [ class "PictureListItem__content" ]
           [ div [ class "PictureListItem__text" ]
-            [ text "React is a clever library for structuring the and managing the data flow. Combined with Redux, a predictable state container for JavaScript apps, it is infinitely easier to build great web applications." ]
+            [ text "React is a clever library for structuring the UI and managing the data flow. Combined with Redux, a predictable state container for JavaScript apps, it is infinitely easier to build great web applications." ]
           ]
         ]
       , div [ class "PictureListItem" ]
