@@ -574,7 +574,7 @@ var _user$project$Main$view = function (model) {
 											]),
 										_elm_lang$core$Native_List.fromArray(
 											[
-												_elm_lang$html$Html$text('React is a clever library for structuring the and managing the data flow. Combined with Redux, a predictable state container for JavaScript apps, it is infinitely easier to build great web applications.')
+												_elm_lang$html$Html$text('React is a clever library for structuring the UI and managing the data flow. Combined with Redux, a predictable state container for JavaScript apps, it is infinitely easier to build great web applications.')
 											]))
 									]))
 							])),
