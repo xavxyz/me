@@ -489,7 +489,7 @@ var _user$project$Main$view = function (model) {
 											]),
 										_elm_lang$core$Native_List.fromArray(
 											[
-												_elm_lang$html$Html$text('—𠂪urélien Basille, CTO @ Cavacave')
+												_elm_lang$html$Html$text('— Aurélien Basille, CTO @ Cavacave')
 											]))
 									]))
 							]))
@@ -903,7 +903,7 @@ var _user$project$Main$view = function (model) {
 											]),
 										_elm_lang$core$Native_List.fromArray(
 											[
-												_elm_lang$html$Html$text('—𠂬hris de Rouck, CTO @ iDronect')
+												_elm_lang$html$Html$text('— Chris de Rouck, CTO @ iDronect')
 											]))
 									]))
 							]))
