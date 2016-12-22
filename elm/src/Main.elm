@@ -127,7 +127,10 @@ view model =
                 [ span [ class "Benefits__title" ]
                     [ text "Open-Source Contributor" ]
                 , span [ class "Benefits__details" ]
-                    [ text "I always sharpen my technical skills on different experiments. I'm also part of Telescope core team, the biggest Meteor + React open-source app." ]
+                    [ text "I always sharpen my technical skills on different experiments. I'm also in the core team of "
+                    , a [ href "https://github.com/TelescopeJS/Telescope", target "_blank" ] [ text "Nova" ]
+                    , text ", a +5k stars React/GraphQL open-source project."
+                    ]
                 ]
             ]
         , div [ class "Testimonial" ]

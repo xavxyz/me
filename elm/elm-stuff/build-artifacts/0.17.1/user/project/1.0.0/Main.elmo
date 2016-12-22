@@ -424,7 +424,19 @@ var _user$project$Main$view = function (model) {
 									]),
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html$text('I always sharpen my technical skills on different experiments. I\'m also part of Telescope core team, the biggest Meteor + React open-source app.')
+										_elm_lang$html$Html$text('I always sharpen my technical skills on different experiments. I\'m also in the core team of '),
+										A2(
+										_elm_lang$html$Html$a,
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_elm_lang$html$Html_Attributes$href('https://github.com/TelescopeJS/Telescope'),
+												_elm_lang$html$Html_Attributes$target('_blank')
+											]),
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_elm_lang$html$Html$text('Nova')
+											])),
+										_elm_lang$html$Html$text(', a +5k stars React/GraphQL open-source project.')
 									]))
 							]))
 					])),
