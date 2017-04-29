@@ -1,23 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { compose, withState, withHandlers } from 'recompose';
 import colors from '../../styles/colors';
 import Bubbles from './Bubbles';
 import Picker from './Picker';
-import Image from './Image';
+import Images from './Images';
 
-const Carousel = ({ active = 'react' }) => (
-  <Frame>
-    <Bubbles active={active} />
-    <Picker active={active} />
-    <Image active={active} />
-  </Frame>
-);
+export const tools = {
+  react: `React is a JavaScript library making the data flow explictly flow throughout the UI thanks to a component hierarchy.`,
+  graphql: `GraphQL specification allows to fetch data efficiently by focusing on the needs of product developers and applications.`,
+  elm: `Elm is a ML-style reactive functional language with enforced immutability that compiles down to optimized JavaScript.`,
+};
+
+const Carousel = ({ active = 'react', pickNext, pickSpecific }) => {
+  return (
+    <Frame onClick={pickNext}>
+      <Bubbles active={active} pickSpecific={pickSpecific} />
+      <Picker active={active} pickSpecific={pickSpecific} tools={tools} />
+      <Images active={active} tools={tools} />
+    </Frame>
+  );
+};
 
 const Frame = styled.div`
   display: flex;
+  align-items: center;
   max-width: 96rem;
-  border: .2rem solid ${colors.transparentWhite};
+  border: .2rem solid ${colors.transparentDarkRed};
   border-radius: .4rem;
   padding: 2rem 1.5rem;
   cursor: pointer;
@@ -25,6 +35,14 @@ const Frame = styled.div`
 
 Carousel.propTypes = {
   active: PropTypes.string,
+  pickNext: PropTypes.func,
+  pickSpecific: PropTypes.func,
 };
 
-export default Carousel;
+export default compose(
+  withState('active', 'setActive', 'react'),
+  withHandlers({
+    pickSpecific: props => name => () => props.setActive(name),
+    pickNext: () => {},
+  })
+)(Carousel);

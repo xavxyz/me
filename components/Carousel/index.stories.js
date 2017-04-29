@@ -1,8 +1,14 @@
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 import React from 'react';
-import Carousel from './index';
+import Carousel, { tools } from './index';
 
-storiesOf('🛠️ Carousel component')
-  .add('React selected', () => <Carousel active="react" />)
-  .add('GraphQL selected', () => <Carousel active="graphql" />)
-  .add('Elm selected', () => <Carousel active="elm" />);
+export const pickNextMock = action('pick next');
+export const pickSpecificMock = name => action(`pick ${name}`);
+
+Object.keys(tools).reduce(
+  (stories, toolName) =>
+    stories.add(`${toolName} selected`, () => (
+      <Carousel active={toolName} pickNext={pickNextMock} pickSpecific={pickSpecificMock} />
+    )),
+  storiesOf('🛠️ Carousel component')
+);
