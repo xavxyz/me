@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { compose, withState, withHandlers } from 'recompose';
+import { compose, withState, withHandlers, lifecycle } from 'recompose';
 import colors from '../../styles/colors';
 import Bubbles from './Bubbles';
 import Picker from './Picker';
@@ -39,10 +39,59 @@ Carousel.propTypes = {
   pickSpecific: PropTypes.func,
 };
 
-export default compose(
-  withState('active', 'setActive', 'react'),
-  withHandlers({
-    pickSpecific: props => name => () => props.setActive(name),
-    pickNext: () => {},
-  })
-)(Carousel);
+export default props => {
+  let currentTimer;
+
+  const timerPickNext = pickNextFn => {
+    let timer = setInterval(pickNextFn, 3000);
+
+    return {
+      clear: restart => {
+        clearInterval(timer);
+        if (typeof restart !== 'undefined') {
+          timer = setInterval(pickNextFn, 3000);
+        }
+      },
+    };
+  };
+
+  const shouldRestartTimer = () => {
+    if (typeof currentTimer !== 'undefined') {
+      currentTimer.clear(true);
+    }
+  };
+
+  const ComposedCarousel = compose(
+    withState('active', 'setActive', 'react'),
+    withHandlers({
+      pickSpecific: ({ setActive }) => name => event => {
+        event.stopPropagation();
+        shouldRestartTimer();
+
+        setActive(name);
+
+        // currentTimer.restart();
+      },
+      pickNext: ({ active, setActive }) => () => {
+        shouldRestartTimer();
+
+        const toolsList = Object.keys(tools);
+        const activeToolIndex = toolsList.indexOf(active);
+        if (activeToolIndex === toolsList.length - 1) {
+          return setActive(toolsList[0]);
+        }
+        return setActive(toolsList[activeToolIndex + 1]);
+      },
+    }),
+    lifecycle({
+      componentDidMount() {
+        currentTimer = timerPickNext(this.props.pickNext);
+      },
+      componentWillUnmount() {
+        currentTimer.clear();
+      },
+    })
+  )(Carousel);
+
+  return <ComposedCarousel {...props} />;
+};
