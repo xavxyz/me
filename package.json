@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "next": "^2.1.1",
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "recompose": "^0.22.0",
-    "prop-types": "^15.5.8",
     "styled-components": "next"
   },
   "devDependencies": {
@@ -27,6 +27,8 @@
     "eslint-plugin-no-unused-vars-rest": "^1.0.4",
     "eslint-plugin-prettier": "^2.0.1",
     "eslint-plugin-react": "^6.10.0",
-    "prettier": "^0.20.0"
+    "jest": "^19.0.2",
+    "prettier": "^0.20.0",
+    "storyshots": "^3.2.2"
   }
 }

@@ -1,5 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import resets from '../styles/resets';
+import globalStyles from '../styles';
 import { styleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -18,9 +18,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>Xavier Cazalot Linkedin Recommendations</title>
+          <title>Xavier Cazalot</title>
 
-          <style dangerouslySetInnerHTML={{ __html: resets }} />
+          <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
           <style dangerouslySetInnerHTML={{ __html: style }} />
         </Head>
 

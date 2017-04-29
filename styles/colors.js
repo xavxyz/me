@@ -1,8 +1,10 @@
 export default {
-  darkBlue: '#03243A',
-  blue: '#007AB9',
-  lightBlue: '#84A8BA',
-  green: '#74C239',
+  black: '#333',
   grey: '#C5C5C5',
   white: '#FCFCFC',
+  transparentWhite: 'rgba(252,252,252,.38)',
+  purple: '#2F1B41',
+  darkRed: '#872341',
+  red: '#BE3144',
+  orange: '#F05941',
 };

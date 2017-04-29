@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Carousel from '../components/Carousel';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -8,6 +9,6 @@ const AppWrapper = styled.div`
 
 export default () => (
   <AppWrapper>
-    w00t
+    <Carousel />
   </AppWrapper>
 );
