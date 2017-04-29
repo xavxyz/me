@@ -1,0 +1,32 @@
+{
+  "name": "xavcz",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --quiet --ext .js .",
+    "prettier": "prettier --write \"{components,pages,styles}/**/*.js\" --single-quote=true --trailing-comma=es5 --print-width=100",
+    "test": "npm run lint",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "next": "^2.1.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "recompose": "^0.22.0",
+    "prop-types": "^15.5.8",
+    "styled-components": "next"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.0.0",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.17.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-no-unused-vars-rest": "^1.0.4",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^6.10.0",
+    "prettier": "^0.20.0"
+  }
+}
