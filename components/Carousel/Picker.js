@@ -47,7 +47,7 @@ const Item = styled.p`
     bottom: 0;
     width: .4rem;
     border-radius: .2rem;
-    background-color: ${colors.red};
+    background-color: ${colors.lightBlue};
     transition: all .2s ease-out 0s;
   }
   

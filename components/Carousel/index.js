@@ -25,7 +25,7 @@ const Frame = styled.div`
   display: flex;
   align-items: center;
   max-width: 96rem;
-  border: .2rem solid ${colors.transparentDarkRed};
+  border: .2rem solid ${colors.transparentWhite};
   border-radius: .4rem;
   padding: 2rem 1.5rem;
   cursor: pointer;
