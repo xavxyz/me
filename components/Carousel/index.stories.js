@@ -1,14 +1,15 @@
 import { storiesOf, action } from '@kadira/storybook';
 import React from 'react';
-import Carousel, { tools } from './index';
+import Carousel, { PureCarousel } from './index';
 
 export const pickNextMock = action('pick next');
-export const pickSpecificMock = name => action(`pick ${name}`);
+export const pickSpecificMock = name => event => {
+  event.stopPropagation();
+  action(`pick ${name}`);
+};
 
-Object.keys(tools).reduce(
-  (stories, toolName) =>
-    stories.add(`${toolName} selected`, () => (
-      <Carousel active={toolName} pickNext={pickNextMock} pickSpecific={pickSpecificMock} />
-    )),
-  storiesOf('🛠️ Carousel component')
-);
+storiesOf('🛠️ Carousel component')
+  .add('tool selected (no handlers)', () => (
+    <PureCarousel active="react" pickNext={pickNextMock} pickSpecific={pickSpecificMock} />
+  ))
+  .add('with timer', () => <Carousel />);

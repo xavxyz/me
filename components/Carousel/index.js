@@ -13,7 +13,7 @@ export const tools = {
   elm: `Elm is a ML-style reactive functional language with enforced immutability that compiles down to optimized JavaScript.`,
 };
 
-const Carousel = ({ active = 'react', pickNext, pickSpecific }) => {
+export const PureCarousel = ({ active = 'react', pickNext, pickSpecific }) => {
   return (
     <Frame onClick={pickNext}>
       <Bubbles active={active} pickSpecific={pickSpecific} />
@@ -33,7 +33,7 @@ const Frame = styled.div`
   cursor: pointer;
 `;
 
-Carousel.propTypes = {
+PureCarousel.propTypes = {
   active: PropTypes.string,
   pickNext: PropTypes.func,
   pickSpecific: PropTypes.func,
@@ -69,8 +69,6 @@ export default props => {
         shouldRestartTimer();
 
         setActive(name);
-
-        // currentTimer.restart();
       },
       pickNext: ({ active, setActive }) => () => {
         shouldRestartTimer();
@@ -91,7 +89,7 @@ export default props => {
         currentTimer.clear();
       },
     })
-  )(Carousel);
+  )(PureCarousel);
 
   return <ComposedCarousel {...props} />;
 };
