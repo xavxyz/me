@@ -14,7 +14,7 @@ const Images = ({ active, tools }) => (
         active={active}
         toolName={toolName}
       >
-        {active}
+        <Accessibility aria-hidden="true">{active} cool image from egghead.io</Accessibility>
       </ImageBackground>
     ))}
   </RelativeWrapper>
@@ -40,8 +40,11 @@ const ImageBackground = styled.div`
   transition: all .2s ease-out 0s;
   min-width: 30rem;
   min-height: 30rem;
-  color: transparent;
   margin: 2rem;
+`;
+
+const Accessibility = styled.span`
+  visibility: hidden;
 `;
 
 export default Images;

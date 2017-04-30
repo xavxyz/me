@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { compose, withState, withHandlers, lifecycle } from 'recompose';
 import colors from '../../styles/colors';
-import Bubbles from './Bubbles';
 import Picker from './Picker';
 import Images from './Images';
 
@@ -16,7 +15,6 @@ export const tools = {
 export const PureCarousel = ({ active = 'react', pickNext, pickSpecific }) => {
   return (
     <Frame onClick={pickNext}>
-      <Bubbles active={active} pickSpecific={pickSpecific} />
       <Picker active={active} pickSpecific={pickSpecific} tools={tools} />
       <Images active={active} tools={tools} />
     </Frame>
@@ -31,6 +29,15 @@ const Frame = styled.div`
   border-radius: .4rem;
   padding: 2rem 1.5rem;
   cursor: pointer;
+  
+  /* 
+    html font-size is 62.5% (= 10px), why the heck 
+    the media query 768px is different from 76.8rem??
+  */
+  /* @media screen and (max-width: 76.8rem) { */
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 PureCarousel.propTypes = {
@@ -43,13 +50,13 @@ export default props => {
   let currentTimer;
 
   const timerPickNext = pickNextFn => {
-    let timer = setInterval(pickNextFn, 3000);
+    let timer = setInterval(pickNextFn, 4000);
 
     return {
       clear: restart => {
         clearInterval(timer);
         if (typeof restart !== 'undefined') {
-          timer = setInterval(pickNextFn, 3000);
+          timer = setInterval(pickNextFn, 4000);
         }
       },
     };
