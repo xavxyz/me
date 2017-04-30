@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const Subtitle = styled.h3`
   font-size: 2.4vw;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
   font-weight: normal;
   opacity: .5;
   margin-bottom: 3rem;

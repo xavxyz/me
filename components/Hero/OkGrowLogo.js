@@ -4,6 +4,13 @@ import colors from '../../styles/colors';
 
 const StyledSvg = styled.svg`
   fill: ${colors.lightBlue};
+  transition: all .2s ease-out;
+  cursor: pointer;
+  
+  &:hover {
+    transition: all .2s ease-in;
+    transform: scale(1.05);
+  }
 `;
 
 const OkGrowLogo = () => (
