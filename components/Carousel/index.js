@@ -29,6 +29,7 @@ const Frame = styled.div`
   border-radius: .4rem;
   padding: 2rem 1.5rem;
   cursor: pointer;
+  margin-bottom: 6rem;
   
   /* 
     html font-size is 62.5% (= 10px), why the heck 

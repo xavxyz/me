@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 
 const PlanetoidContainer = styled.div`
   align-self: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 `;
 
 export default Hero;
