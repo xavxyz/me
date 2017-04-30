@@ -4,8 +4,7 @@
   ],
   "plugins": [
     ["babel-plugin-styled-components", {
-      "ssr": true,
-      "preprocess": true
+      "ssr": true
     }]
   ]
 }
