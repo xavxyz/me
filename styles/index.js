@@ -18,4 +18,14 @@ export default `
     color: ${colors.white};
     background-color: ${colors.black};
   }
+  
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit !important;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
 `;

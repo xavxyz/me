@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Hero from '../components/Hero';
 import Carousel from '../components/Carousel';
+import Footer from '../components/Footer';
 
 export const AppWrapper = styled.div`
   display: flex;
@@ -15,5 +16,6 @@ export default () => (
   <AppWrapper>
     <Hero />
     <Carousel />
+    <Footer />
   </AppWrapper>
 );
