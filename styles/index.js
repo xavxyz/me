@@ -19,6 +19,7 @@ export default `
     background-color: ${colors.black};
   }
   
+  /* should change my reset to handle that */
   a {
     cursor: pointer;
     text-decoration: none;

@@ -48,14 +48,14 @@ const Item = styled.p`
     width: .4rem;
     border-radius: .2rem;
     background-color: ${colors.lightBlue};
-    transition: all .2s ease-out 0s;
+    transition: all .2s ease-in-out;
   }
   
   position: relative;
   padding-left: 2rem;
   ${props => !props.isActive && 'opacity: .5;'}
   margin-bottom: ${props => props.isLastChild ? 0 : '3rem'};
-  transition: all .2s ease-out 0s;
+  transition: all .2s ease-in-out;
   color: ${colors.grey};
   line-height: 1.9;
 `;

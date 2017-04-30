@@ -35,7 +35,7 @@ const WavePositioner = styled.div`
 
 const StyledWave = styled.svg`
   position: relative;
-  bottom: -1rem;
+  bottom: -3vw;
 `;
 
 export default Wave;

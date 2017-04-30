@@ -14,9 +14,6 @@ const List = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 7vw;
-  @media screen and (max-width: 668px) {
-    padding-top: 2.5rem;
-  }
 `;
 
 const Button = styled.div`
