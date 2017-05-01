@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import OkGrowLogo from './OkGrowLogo';
 import colors from '../../styles/colors';
@@ -13,7 +12,7 @@ const Job = () => (
       <Highlight>build client apps, run trainings and ship opensource packages</Highlight>
       .
     </Text>
-    <OkGrowLogo />
+    <a href="https://www.okgrow.com" title="OK GROW!" target="_blank"><OkGrowLogo /></a>
   </Wrapper>
 );
 const Wrapper = styled.div`

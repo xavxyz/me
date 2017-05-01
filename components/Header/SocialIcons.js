@@ -1,17 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 
-const SocialIcons = () => (
+const SocialIcons = ({ scaled }) => (
   <List>
-    <IconLink><StyledSvg viewBox="0 0 512 512">{TwitterPath}</StyledSvg></IconLink>
-    <IconLink><StyledSvg viewBox="0 0 512 512">{GitHubPath}</StyledSvg></IconLink>
+    <IconLink href="https://twitter.com/xav_cz" target="_blank">
+      <StyledSvg scaled={scaled} viewBox="0 0 512 512">{TwitterPath}</StyledSvg>
+    </IconLink>
+    <IconLink href="https://github.com/xavcz" target="_blank">
+      <StyledSvg scaled={scaled} viewBox="0 0 512 512">{GitHubPath}</StyledSvg>
+    </IconLink>
   </List>
 );
 
+SocialIcons.propTypes = {
+  scaled: PropTypes.bool,
+};
+
 const List = styled.div`
   display: flex;
-  position: relative;
 `;
 
 const IconLink = styled.a`
@@ -26,13 +34,15 @@ const IconLink = styled.a`
 `;
 
 const StyledSvg = styled.svg`
-  fill: ${colors.darkGrey};
-  transition: all .2s ease-in;
+  fill: ${props => props.scaled ? props.theme.main : colors.darkGrey};
+  transition: all .2s ease-in-out;
+  
+  ${props => props.scaled && `transform: scale(1.5);`}
   
   &:hover {
-    fill: ${colors.lightBlue};
+    fill: ${props => props.theme.main};
     transform: scale(1.5);
-    transition: all .2s ease-out;
+    transition: all .2s ease-in-out;
   }
 `;
 

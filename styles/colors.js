@@ -9,9 +9,9 @@ export default {
   // lightPurple: '#643989',
   // darkRed: '#872341',
   // transparentDarkRed: 'rgba(135, 35, 65, 0.3)',
-  // red: '#BE3144',
+  red: '#BE3144',
   // orange: '#F05941',
   // darkBrown: '#292929',
-  // gold: 'rgb(167, 130, 71)',
+  yellow: 'rgb(167, 130, 71)',
   // transparentGold: 'rgba(167, 130, 71, 0.5)',
 };

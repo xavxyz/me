@@ -25,23 +25,29 @@ const Planetoid = (
 
   const symmetricTranslation = keyframes`
     0%,100% {
-      transform: translate(${cx}px, ${cy}px);
+      transform: translate(${50 + cxSymmetric}px, ${50 + cySymmetric}px);
+      ${/* transform: translate(50px, 50px); */ ''}
     }
     50% {
-      transform: translate(${cxSymmetric}px, ${cySymmetric}px);
+      transform: translate(${50 + cx}px, ${50 + cy}px);
     }
   `;
 
   const reliefTranslation = keyframes`
-    0% { z-index:3; }
-    49% { z-index:3; }
-    50% { z-index:1; }
-    99% { z-index:1; }
-    100% { z-index:3; }
+    0% { z-index:1; }
+    49% { z-index:1; }
+    50% { z-index:3; }
+    99% { z-index:3; }
+    100% { z-index:1; }
+  `;
+
+  const appearsIn = keyframes`
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   `;
 
   const PlanetoidCircle = styled.circle`
-    ${orbitAnimationDuration && `animation: ${symmetricTranslation} ${orbitAnimationDuration}s ease-in-out infinite;`}
+    ${orbitAnimationDuration && `animation: ${symmetricTranslation} ${orbitAnimationDuration}s ease-in-out infinite 2s;`}
   `;
 
   const AbsoluteWrapper = styled.div`
@@ -49,7 +55,11 @@ const Planetoid = (
     width: 100%;
     height: 100%;
     z-index: 2;
-    ${orbitAnimationDuration && `animation: ${reliefTranslation} ${orbitAnimationDuration}s ease-in-out infinite;`}
+    ${orbitAnimationDuration && `animation: ${reliefTranslation} ${orbitAnimationDuration}s ease-in-out infinite 2s;`}
+  `;
+
+  const OpacityWrapper = styled.div`
+    ${orbitAnimationDuration && `animation: ${appearsIn} .4s ease-in-out 2s;`}
   `;
 
   const SvgContent = styled.svg`
@@ -63,13 +73,20 @@ const Planetoid = (
   const planetoidDefinition = { cx, cy, r: radius };
   const planetoidProps = positionRadius ? { r: radius } : planetoidDefinition;
 
+  const viewBoxOffset = orbitAnimationDuration ? 50 : 0;
+
   return (
-    <AbsoluteWrapper>
-      <SvgContent xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <PlanetoidCircle {...planetoidProps} />
-        {children && Children.map(children, child => cloneElement(child, planetoidDefinition))}
-      </SvgContent>
-    </AbsoluteWrapper>
+    <OpacityWrapper>
+      <AbsoluteWrapper>
+        <SvgContent
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox={`${viewBoxOffset} ${viewBoxOffset} 100 100`}
+        >
+          <PlanetoidCircle {...planetoidProps} />
+          {children && Children.map(children, child => cloneElement(child, planetoidDefinition))}
+        </SvgContent>
+      </AbsoluteWrapper>
+    </OpacityWrapper>
   );
 };
 

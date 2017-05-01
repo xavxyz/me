@@ -9,15 +9,13 @@ const StyledSvg = styled.svg`
   
   &:hover {
     transition: all .2s ease-in;
-    transform: scale(1.05);
+    transform: scale(1.2);
   }
 `;
 
 const OkGrowLogo = () => (
   <StyledSvg
     xmlns="http://www.w3.org/2000/svg"
-    id="Layer_1"
-    data-name="Layer 1"
     viewBox="0 0 194.13 194.13"
     width="10vw"
     height="10vw"

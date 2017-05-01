@@ -24,10 +24,10 @@ const Wrapper = styled.div`
   width: 80vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const PlanetoidContainer = styled.div`
-  align-self: flex-end;
   margin-bottom: 6rem;
 `;
 

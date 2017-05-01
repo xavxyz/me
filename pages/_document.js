@@ -18,6 +18,11 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            src="https://fonts.googleapis.com/css?family=Space+Mono:700"
+          />
           <title>Xavier Cazalot</title>
 
           <style dangerouslySetInnerHTML={{ __html: globalStyles }} />

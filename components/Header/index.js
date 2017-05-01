@@ -1,44 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { compose, withState, withHandlers } from 'recompose';
 import Me from './Me';
-import ThemeSwitcher from './ThemeSwitcher';
 import SocialIcons from './SocialIcons';
-import About from './About';
-import colors from '../../styles/colors';
 
-const Header = () => (
-  <FixedWrapper>
-    <Left>
-      <Me />
-      <ThemeSwitcher />
-    </Left>
-    <Right>
-      <SocialIcons />
-      <About />
-    </Right>
-  </FixedWrapper>
+const Header = ({ scaleIcons, scaled }) => (
+  <Wrapper>
+    <Me scaleIcons={scaleIcons} />
+    <SocialIcons scaled={scaled} />
+  </Wrapper>
 );
 
-const FixedWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+Header.propTypes = {
+  scaleIcons: PropTypes.func,
+  scaled: PropTypes.bool,
+};
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: all .2s ease-in-out;
-  background: ${colors.white};
-  box-shadow: 0 .2rem .4rem rgba(0,0,0,.1);
-  z-index: 200; /* 😳 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-bottom: 6rem;
 `;
 
-const Left = styled.div`
-  display: flex;
-`;
-const Right = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export default Header;
+export default compose(
+  withState('scaled', 'updateScale', false),
+  withHandlers({
+    scaleIcons: ({ /*scaledIcons,*/ updateScale }) => bool => event => {
+      updateScale(bool);
+    },
+  })
+)(Header);

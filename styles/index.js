@@ -4,7 +4,6 @@ export const reboot = `html{-webkit-box-sizing:border-box;box-sizing:border-box;
 
 export default `
   ${reboot}
-  @import url('https://fonts.googleapis.com/css?family=Space+Mono:700');
   
   html {
     font-size: 62.5%;

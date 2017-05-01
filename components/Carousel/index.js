@@ -9,7 +9,7 @@ import Images from './Images';
 export const tools = {
   react: `React is a JavaScript library making the data flow explictly flow throughout the UI thanks to a component hierarchy.`,
   graphql: `GraphQL specification allows to fetch data efficiently by focusing on the needs of product developers and applications.`,
-  elm: `Elm is a ML-style reactive functional language with enforced immutability that compiles down to optimized JavaScript.`,
+  meteor: `Meteor eases the pain of building great web applications when used as the centerpiece of an architectural stack.`,
 };
 
 export const PureCarousel = ({ active = 'react', pickNext, pickSpecific }) => {
@@ -94,7 +94,9 @@ export default props => {
         currentTimer = timerPickNext(this.props.pickNext);
       },
       componentWillUnmount() {
-        currentTimer.clear();
+        if (typeof currentTimer === 'function') {
+          currentTimer.clear();
+        }
       },
     })
   )(PureCarousel);
