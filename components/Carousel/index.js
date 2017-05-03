@@ -38,6 +38,7 @@ const Frame = styled.div`
   /* @media screen and (max-width: 76.8rem) { */
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    width: 80%;
   }
 `;
 
