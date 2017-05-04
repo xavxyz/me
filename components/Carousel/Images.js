@@ -31,7 +31,6 @@ const ImageBackground = styled.div`
   ${props => !props.isLastChild && 'position: absolute;'}
   display: flex;
   flex: 1;
-  background-position: center center;
   background-repeat: no-repeat;
   background-image: url('/static/${props => props.toolName}.svg');
   transition: all .3s ease-in-out 0s;
