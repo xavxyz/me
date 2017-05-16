@@ -6,7 +6,8 @@
 New job, next page (pun intended).
 
 ### Credits
-SVG logos from my fav library/specification/framework React, GraphQL & Meteor.
-Logo from [OK GROW!](https://www.okgrow.com): this is where I work now 🚀
-Buttons are inspired from [spectrum.chat](https://spectrum.chat): check it out, it's awesome.
-Carousel is inspired from [Slack Enterprise](https://slack.com/enterprise): this landing page is beautiful.
+- SVG logos from my fav library/specification/framework React, GraphQL & Meteor.
+- Logo from [OK GROW!](https://www.okgrow.com): this is where I work now 🚀
+- Buttons are inspired from [spectrum.chat](https://spectrum.chat): check this product, it's awesome.
+- Carousel is inspired from [Slack Enterprise](https://slack.com/enterprise): this landing page is beautiful.
+- Open source is inspired from [Zeit OSS](https://zeit.co/oss): that's sick :octocat:.
