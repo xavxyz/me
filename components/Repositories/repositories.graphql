@@ -1,0 +1,11 @@
+query getRepositories {
+    repositories {
+      id
+      name
+      description
+      image
+      stars
+      forks
+      url
+    }
+  }

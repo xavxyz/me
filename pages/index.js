@@ -1,9 +1,24 @@
 import styled, { ThemeProvider } from 'styled-components';
-import withThemeSelector from '../components/withThemeSelector';
+import { compose } from 'recompose';
+import withThemeSelector from '../lib/withThemeSelector';
+import withData from '../lib/withData';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Carousel from '../components/Carousel';
+import Repositories from '../components/Repositories';
 import Footer from '../components/Footer';
+
+export default compose(withData, withThemeSelector)(({ currentTheme }) => (
+  <ThemeProvider theme={currentTheme}>
+    <AppWrapper>
+      <Header />
+      <Hero />
+      <Carousel />
+      <Repositories />
+      <Footer />
+    </AppWrapper>
+  </ThemeProvider>
+));
 
 export const AppWrapper = styled.div`
   display: flex;
@@ -13,14 +28,3 @@ export const AppWrapper = styled.div`
   margin-left: 2rem;
   margin-right: 2rem;
 `;
-
-export default withThemeSelector(({ currentTheme }) => (
-  <ThemeProvider theme={currentTheme}>
-    <AppWrapper>
-      <Header />
-      <Hero />
-      <Carousel />
-      <Footer />
-    </AppWrapper>
-  </ThemeProvider>
-));
