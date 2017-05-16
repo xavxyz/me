@@ -9,10 +9,14 @@ const Job = () => (
       I work at{' '}
       <Highlight>OK GROW!</Highlight>
       {' '}where I use React, GraphQL & Meteor to{' '}
-      <Highlight>build client apps, run trainings and ship opensource packages</Highlight>
+      <Highlight>
+        build client apps, run training and ship opensource packages
+      </Highlight>
       .
     </Text>
-    <a href="https://www.okgrow.com" title="OK GROW!" target="_blank"><OkGrowLogo /></a>
+    <a href="https://www.okgrow.com" title="OK GROW!" target="_blank">
+      <OkGrowLogo />
+    </a>
   </Wrapper>
 );
 const Wrapper = styled.div`
