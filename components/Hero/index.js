@@ -8,8 +8,8 @@ import Job from './Job';
 const Hero = () => {
   return (
     <Wrapper>
-      <Title>Javascript Engineer</Title>
-      <Subtitle>Building webapps for your delight.</Subtitle>
+      <Title>Javascript Explorer</Title>
+      <Subtitle>Always delighted to broaden my horizons.</Subtitle>
       <PlanetoidContainer>
         {/* note: let's make it kickable in this container later 🏌️‍♂️ */}
         <StripedPlanetoid />
