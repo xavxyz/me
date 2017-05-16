@@ -8,7 +8,12 @@ import Job from './Job';
 const Hero = () => {
   return (
     <Wrapper>
-      <Title>Javascript Explorer</Title>
+      <Title>
+        Javascript{' '}
+        <NotThatSecretLinkToVimeo href="https://vimeo.com/sakados" target="_blank">
+          Explorer
+        </NotThatSecretLinkToVimeo>
+      </Title>
       <Subtitle>Always delighted to broaden my horizons.</Subtitle>
       <PlanetoidContainer>
         {/* note: let's make it kickable in this container later 🏌️‍♂️ */}
@@ -25,6 +30,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const NotThatSecretLinkToVimeo = styled.a`
+  cursor: progress;
 `;
 
 const PlanetoidContainer = styled.div`

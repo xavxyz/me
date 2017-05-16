@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
           />
           <title>Xavier Cazalot</title>
           <link href="/static/favicon.ico" rel="shortcut icon" />
-          <meta content="Xavier Cazalot, JavaScript Engineer @ OK GROW!" name="description" />
+          <meta content="Xavier Cazalot, JavaScript Explorer @ OK GROW!" name="description" />
           <meta content="article" property="og:type" />
           <meta content="https://xaviercazalot.com" property="og:url" />
           <meta
@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
           />
           <meta content="Xavier Cazalot 🚀" property="og:title" />
           <meta
-            content="Xavier Cazalot, JavaScript Engineer @ OK GROW!"
+            content="Xavier Cazalot, JavaScript Explorer @ OK GROW!"
             property="og:description"
           />
           <meta content="summary" name="twitter:card" />
@@ -44,7 +44,7 @@ export default class MyDocument extends Document {
           />
           <meta content="Xavier Cazalot 🚀" name="twitter:title" />
           <meta
-            content="Xavier Cazalot, JavaScript Engineer @ OK GROW!"
+            content="Xavier Cazalot, JavaScript Explorer @ OK GROW!"
             name="twitter:description"
           />
 
