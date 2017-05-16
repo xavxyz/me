@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 export default compose(
   withState('scaled', 'updateScale', false),
   withHandlers({
-    scaleIcons: ({ /*scaledIcons,*/ updateScale }) => bool => event => {
+    scaleIcons: ({ /*scaledIcons,*/ updateScale }) => bool => () => {
       updateScale(bool);
     },
   })
