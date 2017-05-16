@@ -24,7 +24,7 @@ Me.propTypes = {
 
 const StyledLink = styled.a`
   font-family: "Space Mono", monospace, sans-serif;
-  font-size: 1.5vw;
+  font-size: 2vw;
   transition: all .2s ease-in;
   text-transform: uppercase;
   letter-spacing: .1rem;
