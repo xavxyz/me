@@ -14,7 +14,7 @@ const Hero = () => {
           Explorer
         </NotThatSecretLinkToVimeo>
       </Title>
-      <Subtitle>Always delighted to broaden my horizons.</Subtitle>
+      <Subtitle>Always delighted to broaden my horizons</Subtitle>
       <PlanetoidContainer>
         {/* note: let's make it kickable in this container later 🏌️‍♂️ */}
         <StripedPlanetoid />
