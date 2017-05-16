@@ -20,7 +20,7 @@ const Hero = () => {
 };
 
 const Wrapper = styled.div`
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   width: 80vw;
   display: flex;
   flex-direction: column;
