@@ -6,32 +6,31 @@ import Head from './Head';
 import Project from './Project';
 import REPOSITORIES_QUERY from './repositories.graphql';
 
-const Repositories = ({ repositories = [] }) => (
-  <Wrapper>
-    <Head />
-    <FlexWrap>
-      {repositories
-        // create two rows so that repositories are shown 4x1, 2x2, 1x4 depending on screen size
-        .reduce(
-          (matrix, project, index) => {
-            const [firstRow, secondRow] = matrix;
+const Repositories = ({ repositories = [], error }) => !error &&
+<Wrapper>
+  <Head />
+  <FlexWrap>
+    {repositories
+      // create two rows so that repositories are shown 4x1, 2x2, 1x4 depending on screen size
+      .reduce(
+        (matrix, project, index) => {
+          const [firstRow, secondRow] = matrix;
 
-            const rowToModify = index % 2 === 0 ? secondRow : firstRow;
+          const rowToModify = index % 2 === 0 ? secondRow : firstRow;
 
-            rowToModify.push(project);
+          rowToModify.push(project);
 
-            return [firstRow, secondRow];
-          },
-          [[], []] // note: should create the matrix based on the repositories length
-        )
-        .map((row, index) => (
-          <Row key={`row-${index}`}>
-            {row.map(project => <Project key={project.id} {...project} />)}
-          </Row>
-        ))}
-    </FlexWrap>
-  </Wrapper>
-);
+          return [firstRow, secondRow];
+        },
+        [[], []] // note: should create the matrix based on the repositories length
+      )
+      .map((row, index) => (
+        <Row key={`row-${index}`}>
+          {row.map(project => <Project key={project.id} {...project} />)}
+        </Row>
+      ))}
+  </FlexWrap>
+</Wrapper>;
 
 Repositories.propTypes = {
   repositories: PropTypes.array,
@@ -57,5 +56,5 @@ const Row = styled.div`
 `;
 
 export default graphql(REPOSITORIES_QUERY, {
-  props: ({ data: { repositories } }) => ({ repositories }),
+  props: ({ data: { repositories, error } }) => ({ repositories, error }),
 })(Repositories);

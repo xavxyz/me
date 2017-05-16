@@ -36,6 +36,7 @@ const Description = styled.div`
   font-size: 1.6rem;
   text-align: center;
   min-height: 4.8rem; /* firefox lame fix */
+  padding: 0 .3rem;
 `;
 
 export default InfoBlock;

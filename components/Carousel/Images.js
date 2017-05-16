@@ -32,6 +32,7 @@ const ImageBackground = styled.div`
   display: flex;
   flex: 1;
   background-repeat: no-repeat;
+  background-position: center;
   background-image: url('/static/${props => props.toolName}.svg');
   transition: all .3s ease-in-out 0s;
   min-width: 30rem;
