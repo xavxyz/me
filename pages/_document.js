@@ -24,6 +24,29 @@ export default class MyDocument extends Document {
             src="https://fonts.googleapis.com/css?family=Space+Mono:700"
           />
           <title>Xavier Cazalot</title>
+          <link href="/static/favicon.ico" rel="shortcut icon" />
+          <meta content="Xavier Cazalot, JavaScript Engineer @ OK GROW!" name="description" />
+          <meta content="article" property="og:type" />
+          <meta content="https://xav.cz" property="og:url" />
+          <meta
+            content="https://d13yacurqjgara.cloudfront.net/users/39185/screenshots/2380677/helmet.jpg"
+            property="og:image"
+          />
+          <meta content="Xavier Cazalot 🚀" property="og:title" />
+          <meta
+            content="Xavier Cazalot, Consultant, Fullstack JavaScript Engineer"
+            property="og:description"
+          />
+          <meta content="summary" name="twitter:card" />
+          <meta
+            content="https://d13yacurqjgara.cloudfront.net/users/39185/screenshots/2380677/helmet.jpg"
+            name="twitter:image:src"
+          />
+          <meta content="Xavier Cazalot 🚀" name="twitter:title" />
+          <meta
+            content="Xavier Cazalot, Consultant, Fullstack JavaScript Engineer"
+            name="twitter:description"
+          />
 
           <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
           <style dangerouslySetInnerHTML={{ __html: style }} />
