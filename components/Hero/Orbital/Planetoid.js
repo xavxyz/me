@@ -23,6 +23,7 @@ const Planetoid = (
     ({ fn }) => 50 - positionRadius * Math[fn](angleRadian + Math.PI)
   );
 
+  // translation in orbit, applied to a group
   const symmetricTranslation = keyframes`
     0%,100% {
       transform: translate(${50 + cxSymmetric}px, ${50 + cySymmetric}px);
@@ -33,6 +34,18 @@ const Planetoid = (
     }
   `;
 
+  // scaling of the planetoid, applied to the circle!
+  const scaleTransform = keyframes`
+    0% { transform: scale(1); }
+    25% { transform: scale(0.8); }
+    47% { transform: scale(1); }
+    75% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+  `;
+
+  // applied to a div wrapping the svg,
+  // z-index is not handled in svg per spec 1.1 :(
+  // note: tried to use 2.0 but didn't succeed yet
   const reliefTranslation = keyframes`
     0% { z-index:1; }
     49% { z-index:1; }
@@ -41,13 +54,19 @@ const Planetoid = (
     100% { z-index:1; }
   `;
 
+  // make the planetoid appears after a short delay
+  // note: hack to handle server-side rendering
   const appearsIn = keyframes`
     0% { opacity: 0; }
     100% { opacity: 1; }
   `;
 
-  const PlanetoidCircle = styled.circle`
+  const ReliefGroup = styled.g`
     ${orbitAnimationDuration && `animation: ${symmetricTranslation} ${orbitAnimationDuration}s ease-in-out infinite 2s;`}
+  `;
+
+  const PlanetoidCircle = styled.circle`
+    ${orbitAnimationDuration && `animation: ${scaleTransform} ${orbitAnimationDuration}s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite 2s;`}
   `;
 
   const AbsoluteWrapper = styled.div`
@@ -82,7 +101,7 @@ const Planetoid = (
           xmlns="http://www.w3.org/2000/svg"
           viewBox={`${viewBoxOffset} ${viewBoxOffset} 100 100`}
         >
-          <PlanetoidCircle {...planetoidProps} />
+          <ReliefGroup><PlanetoidCircle {...planetoidProps} /></ReliefGroup>
           {children && Children.map(children, child => cloneElement(child, planetoidDefinition))}
         </SvgContent>
       </AbsoluteWrapper>
