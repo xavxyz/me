@@ -18,7 +18,7 @@ GithubMetrics.propTypes = {
 const Block = styled.div`
   display: flex;
   justify-content: space-around;
-  flex: 1;
+  flex: 3;
   align-items: flex-end;
   padding-bottom: 1rem;
 `;
