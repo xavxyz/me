@@ -1,5 +1,5 @@
 <!-- let's configure jest -->
-[![Build Status](https://travis-ci.org/xavcz/xav.cz.svg?branch=master)](https://travis-ci.org/xavcz/xav.cz)
+[![Build Status](https://travis-ci.org/xavcz/me.svg?branch=master)](https://travis-ci.org/xavcz/me)
 
 > Some slick stuff still need to be done, see [issues](https://github.com/xavcz/xav.cz/issues) 🖖
 
