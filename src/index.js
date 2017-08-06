@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import Hello from './Hello';
 import GooHue from './GooHue';
-import { bubbles, gooes } from './GooHue/data';
+import Icon from './Icon';
+import { bubbles, gooes, icons } from './data';
 import './index.css';
 
 const getRandomGoo = gooes => Math.floor(Math.random() * (gooes.length - 1));
@@ -38,16 +39,25 @@ class App extends Component {
         }}
       >
         <Wrap>
-          <Hello
-            title={['Web', 'Explorer']}
-            handleSelectGoo={this.handleSelectGoo}
-          />
-          <GooHue
-            bubbles={this.props.bubbles}
-            gooes={this.props.gooes}
-            handleSelectGoo={this.handleSelectGoo}
-            withoutHue
-          />
+          <Row>
+            <Hello
+              title={['Web', 'Explorer']}
+              handleSelectGoo={this.handleSelectGoo}
+            />
+            <GooHue
+              bubbles={this.props.bubbles}
+              gooes={this.props.gooes}
+              handleSelectGoo={this.handleSelectGoo}
+              withoutHue
+            />
+          </Row>
+          <List>
+            {Object.entries(icons).map(([name, data]) =>
+              <Link href={data.profile} target="_blank" title={name}>
+                <Icon key={name} data={data.path} title={name} height="6rem" />
+              </Link>
+            )}
+          </List>
         </Wrap>
       </ThemeProvider>
     );
@@ -56,8 +66,30 @@ class App extends Component {
 
 const Wrap = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 9rem 3rem 3rem 3rem;
+`;
+
+const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+`;
+
+const List = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Link = styled.a`
+  margin: .5rem;
+  transition: all .1s ease-out;
+
+  &:hover {
+    transition: all .1s ease-in;
+    transform: scale(1.2);
+  }
 `;
 
 ReactDOM.render(

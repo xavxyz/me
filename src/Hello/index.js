@@ -26,7 +26,7 @@ const Wrap = styled.div`
   padding-top: 3rem;
 `;
 
-const Title = styled.div`font-size: 5.0rem;`;
+const Title = styled.div`font-size: 3.7rem;`;
 
 const Subtitle = styled.div`
   margin-top: 2rem;
@@ -36,6 +36,7 @@ const Subtitle = styled.div`
 const Highlight = styled.span`
   cursor: pointer;
   color: ${props => props.theme.selectedStart};
+  transition: color .3s ease-out;
 `;
 
 export default Hello;
