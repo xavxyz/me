@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Hello from './Hello';
 import GooHue from './GooHue';
 import { bubbles, gooes } from './GooHue/data';
-import './theme';
+import './index.css';
 
 const App = () =>
   <Wrap>
