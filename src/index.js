@@ -68,13 +68,24 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 9rem 3rem 3rem 3rem;
+  padding: 3rem;
+
+  /* MIN here */
+  @media screen and (min-width: 1024px) {
+    padding-top: 6rem;
+  }
 `;
 
 const Row = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 3rem;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 `;
 
 const List = styled.div`

@@ -24,6 +24,10 @@ const Wrap = styled.div`
   text-align: right;
   flex: 1;
   padding-top: 3rem;
+
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const Title = styled.div`font-size: 3.7rem;`;
@@ -31,6 +35,10 @@ const Title = styled.div`font-size: 3.7rem;`;
 const Subtitle = styled.div`
   margin-top: 2rem;
   font-size: 1.6rem;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const Highlight = styled.span`

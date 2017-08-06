@@ -1,7 +1,7 @@
-body {
+html {
   margin: 0;
   background: #171e26;
   color: #fafafa;
   font-family: "Merriweather Sans", sans-serif;
-  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
 }
