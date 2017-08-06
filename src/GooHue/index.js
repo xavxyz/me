@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Goo from './Goo';
@@ -21,8 +21,6 @@ import Hue from './Hue';
   - SVG (GSAP, refs and .map/.reduce over-engineering for the fun 🤙)
   
 */
-
-// app
 
 const GooHue = ({ withoutHue, gooes, bubbles, selectedStart, selectedEnd }) =>
   <Wrap>

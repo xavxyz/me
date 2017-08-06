@@ -57,7 +57,7 @@ class App extends Component {
 const Wrap = styled.div`
   display: flex;
   justify-content: center;
-  padding: 12rem 3rem 3rem 3rem;
+  padding: 9rem 3rem 3rem 3rem;
 `;
 
 ReactDOM.render(
