@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { TweenMax, TimelineMax, Sine, Linear } from 'gsap';
 
 // utils
@@ -100,7 +99,7 @@ class Goo extends PureComponent {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 260 600 210"
+        viewBox="150 260 300 210"
         width="100%"
       >
         <defs>
@@ -220,18 +219,5 @@ class Goo extends PureComponent {
     );
   }
 }
-
-Goo.propTypes = {
-  bubbles: PropTypes.shape({
-    cx: PropTypes.number.isRequired,
-    cy: PropTypes.number.isRequired,
-    r: PropTypes.number.isRequired,
-    delay: PropTypes.number.isRequired,
-    effect: {
-      duration: PropTypes.number.isRequired,
-      jump: PropTypes.number.isRequired,
-    },
-  }).isRequired,
-};
 
 export default Goo;

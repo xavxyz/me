@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Goo from './Goo';
 import Hue from './Hue';
 
@@ -46,7 +47,7 @@ class GooHue extends Component {
     ];
 
     return (
-      <div>
+      <Wrap>
         {!this.props.withoutHue &&
           <Hue
             gooes={this.props.gooes}
@@ -57,7 +58,7 @@ class GooHue extends Component {
           selectedEnd={selectedEnd}
           bubbles={this.props.bubbles}
         />
-      </div>
+      </Wrap>
     );
   }
 }
@@ -65,5 +66,7 @@ class GooHue extends Component {
 Hue.propTypes = {
   gooes: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 };
+
+const Wrap = styled.div`flex: 1;`;
 
 export default GooHue;
