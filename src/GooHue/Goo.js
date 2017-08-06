@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { TweenMax, TimelineMax, Sine, Linear } from 'gsap';
-import styled, { withTheme } from 'styled-components';
+import { withTheme } from 'styled-components';
+
+import Transistop from '../shared/Transistop';
 
 // utils
 
@@ -112,14 +114,8 @@ class Goo extends PureComponent {
             x2="300"
             y2="600"
           >
-            <StopTransitioned
-              offset="0.5"
-              stopColor={this.props.theme.selectedStart}
-            />
-            <StopTransitioned
-              offset="0.8"
-              stopColor={this.props.theme.selectedEnd}
-            />
+            <Transistop offset="0.5" />
+            <Transistop offset="0.8" end />
           </linearGradient>
           <mask id="liquidMask">
             <path
@@ -205,11 +201,7 @@ class Goo extends PureComponent {
         >
           <stop offset="0.02" stopColor="#fff" stopOpacity="0.2" />
 
-          <stop
-            offset="1"
-            stopColor={this.props.theme.selectedEnd}
-            stopOpacity="0.1"
-          />
+          <Transistop offset="1" stopOpacity="0.1" end />
         </radialGradient>
 
         <circle
@@ -226,7 +218,5 @@ class Goo extends PureComponent {
     );
   }
 }
-
-const StopTransitioned = styled.stop`transition: .3s ease-in-out;`;
 
 export default withTheme(Goo);
