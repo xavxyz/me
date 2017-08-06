@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { TweenMax, TimelineMax, Sine, Linear } from 'gsap';
+import { withTheme } from 'styled-components';
 
 // utils
 
@@ -111,8 +112,8 @@ class Goo extends PureComponent {
             x2="300"
             y2="600"
           >
-            <stop offset="0.5" stopColor={this.props.selectedStart} />
-            <stop offset="0.8" stopColor={this.props.selectedEnd} />
+            <stop offset="0.5" stopColor={this.props.theme.selectedStart} />
+            <stop offset="0.8" stopColor={this.props.theme.selectedEnd} />
           </linearGradient>
           <mask id="liquidMask">
             <path
@@ -154,7 +155,7 @@ class Goo extends PureComponent {
         >
           <path
             ref={liquidBack => (this.liquidBack = liquidBack)}
-            fill={this.props.selectedEnd}
+            fill={this.props.theme.selectedEnd}
             d="M1199.9,365.1c-41.8,0-79.4,9.8-107.4,8.1c-38.9-2.3-54.5-16.4-83.6-19.9 c-29.1-3.5-71.5,3.4-110.4,1c-28-1.7-56.4-13.7-98.2-13.7c-41.8,0-70.2,12-98.2,13.7c-38.9,2.3-81.4-4.6-110.4-1 c-29.1,3.5-44.7,17.5-83.6,19.9c-28,1.7-65.7-8.2-107.5-8.2c-41.8,0-79.5,9.9-107.5,8.2c-38.9-2.3-54.5-16.3-83.6-19.9 c-29.1-3.5-72,3.4-110.9,1c-28-1.7-56.7-13.7-98.7-13.7V438h1200L1199.9,365.1z"
           />
           <g
@@ -200,7 +201,7 @@ class Goo extends PureComponent {
 
           <stop
             offset="1"
-            stopColor={this.props.selectedEnd}
+            stopColor={this.props.theme.selectedEnd}
             stopOpacity="0.1"
           />
         </radialGradient>
@@ -220,4 +221,4 @@ class Goo extends PureComponent {
   }
 }
 
-export default Goo;
+export default withTheme(Goo);

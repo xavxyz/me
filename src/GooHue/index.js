@@ -24,44 +24,16 @@ import Hue from './Hue';
 
 // app
 
-class GooHue extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      selectedGooIndex: 0,
-    };
-
-    this.handleSelectGoo = this.handleSelectGoo.bind(this);
-  }
-
-  handleSelectGoo(selectedGooIndex) {
-    return () => {
-      this.setState(() => ({ selectedGooIndex }));
-    };
-  }
-
-  render() {
-    const [selectedStart, selectedEnd] = this.props.gooes[
-      this.state.selectedGooIndex
-    ];
-
-    return (
-      <Wrap>
-        {!this.props.withoutHue &&
-          <Hue
-            gooes={this.props.gooes}
-            handleSelectGoo={this.handleSelectGoo}
-          />}
-        <Goo
-          selectedStart={selectedStart}
-          selectedEnd={selectedEnd}
-          bubbles={this.props.bubbles}
-        />
-      </Wrap>
-    );
-  }
-}
+const GooHue = ({ withoutHue, gooes, bubbles, selectedStart, selectedEnd }) =>
+  <Wrap>
+    {!withoutHue &&
+      <Hue gooes={gooes} handleSelectGoo={this.handleSelectGoo} />}
+    <Goo
+      selectedStart={selectedStart}
+      selectedEnd={selectedEnd}
+      bubbles={bubbles}
+    />
+  </Wrap>;
 
 Hue.propTypes = {
   gooes: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,

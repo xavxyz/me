@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Hello = ({ title }) =>
+const Hello = ({ title, handleSelectGoo }) =>
   <Wrap>
     <Title>Hello! I'm Xavier,</Title>
     {title.map((word, index) =>
@@ -10,7 +10,10 @@ const Hello = ({ title }) =>
         {index === title.length - 1 ? `${word}!` : word}
       </Title>
     )}
-    <Subtitle>Refresh the page or follow the links below!</Subtitle>
+    <Subtitle>
+      <Highlight onClick={handleSelectGoo}>Refresh the page</Highlight> or
+      follow the links below!
+    </Subtitle>
   </Wrap>;
 
 Hello.propTypes = {
@@ -28,6 +31,11 @@ const Title = styled.div`font-size: 5.0rem;`;
 const Subtitle = styled.div`
   margin-top: 2rem;
   font-size: 1.6rem;
+`;
+
+const Highlight = styled.span`
+  cursor: pointer;
+  color: ${props => props.theme.selectedStart};
 `;
 
 export default Hello;
