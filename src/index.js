@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, keyframes } from 'styled-components';
 import Hello from './Hello';
 import GooHue from './GooHue';
 import Icon from './Icon';
@@ -53,8 +53,8 @@ class App extends Component {
           </Row>
           <List>
             {Object.entries(icons).map(([name, data]) =>
-              <Link href={data.profile} target="_blank" title={name}>
-                <Icon key={name} data={data.path} title={name} height="6rem" />
+              <Link key={name} href={data.profile} target="_blank" title={name}>
+                <Icon data={data.path} title={name} height="6rem" />
               </Link>
             )}
           </List>
@@ -64,11 +64,20 @@ class App extends Component {
   }
 }
 
+// could be refactored with GSAP and making things appears one by one
+// -> drive attention where I want visitor to look at
+const globalAppearIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 3rem;
+
+  animation: ${globalAppearIn} .3s ease-out;
 
   /* MIN here */
   @media screen and (min-width: 1024px) {
