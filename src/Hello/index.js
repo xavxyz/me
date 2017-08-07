@@ -11,7 +11,7 @@ const Hello = ({ title, handleSelectGoo }) =>
       </Title>
     )}
     <Subtitle>
-      <Highlight onClick={handleSelectGoo}>Refresh the colors</Highlight> or
+      <Highlight onClick={handleSelectGoo}>Renew the colors</Highlight> or
       follow the links below!
     </Subtitle>
   </Wrap>;
