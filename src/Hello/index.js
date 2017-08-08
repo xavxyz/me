@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Hello = ({ title, handleSelectGoo }) =>
+const Hello = ({ title, subtitle, handleSelectGoo }) =>
   <Wrap>
     <Title>Hello! I'm Xavier,</Title>
-    {title.map((word, index) =>
-      <Title key={word}>
-        {index === title.length - 1 ? `${word}!` : word}
-      </Title>
-    )}
+    <Title>
+      {title}!
+    </Title>
+    {subtitle &&
+      <Subtitle>
+        {subtitle}
+      </Subtitle>}
     <Subtitle>
       <Highlight onClick={handleSelectGoo}>Renew the colors</Highlight> or
       follow the links below!
@@ -17,7 +19,8 @@ const Hello = ({ title, handleSelectGoo }) =>
   </Wrap>;
 
 Hello.propTypes = {
-  title: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
 };
 
 const Wrap = styled.div`

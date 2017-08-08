@@ -41,7 +41,8 @@ class App extends Component {
         <Wrap>
           <Row>
             <Hello
-              title={['Web', 'Explorer']}
+              title="Web Alchemist"
+              subtitle="I engineer experiences for you delight."
               handleSelectGoo={this.handleSelectGoo}
             />
             <GooHue
