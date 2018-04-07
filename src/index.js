@@ -41,7 +41,7 @@ class App extends Component {
         <Wrap>
           <Row>
             <Hello
-              title="Web Alchemist"
+              title="Web Explorer"
               subtitle="I engineer experiences for you delight."
               handleSelectGoo={this.handleSelectGoo}
             />
